@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습문제4</title>
+</head>
+<body>
+        <input id="firstNum" type="number" placeholder="첫 번째 숫자"/>
+        <input id="secondNum" type="number" placeholder="두 번째 숫자"/>
+        <button onclick="calc()">계산</button>
+        <p id="output"></p>
+
+        <script>
+            // 1. 함수를 생성한다. => 함수이름 function calc(){}
+            function calc(){
+                // 2. 각 input의 document를 변수로 정의해서 저장
+                let a=Number(document.getElementById('firstNum').value);
+                let b=Number(document.getElementById('secondNum').value);
+                // 3. 출력할 p태그 document 변수 지정
+                let result=document.getElementById('output');
+                // 4. 연산 +-*/
+                // 구조적으로 개발하기를 원하면 변수로 모두 정의한다.
+                let add= a+b;
+                let diff= a-b;
+                let mul= a*b;
+                let did= a/b;
+                result.innerHTML=`합: ${add}, 차: ${diff}, 곱: ${mul}, 나누기: ${did}`;
+                console.log(`합: ${add}, 차: ${diff}, 곱: ${mul}, 나누기: ${did}`);
+            }
+
+            // && : and(그리고~) 조건을 모두 만족할 때 true, false
+            // || : or(또는, ~이거나) 조건중 하나라도 만족할 때 true, false
+            // ! : not(true) => 조건의 부정이므로 false가 출력
+            // 엑셀이 40점 이상이면서 엑세스 40 이상이면서 평균이 60점 이상이면
+            // 컴활 '합격', 아니면 '불합격'
+
+            let num=0;
+            let num2=60;
+            let avg=(num1=num2)/2;
+            num>=40 && num2>=40 && avg>=60? '합격':'불합격';
+            console.log(`avg : ${avg}, ${num>=40 && num2>=40 && avg>=60? '합격':'불합격'}`);
+        </script>
+</body>
+</html>

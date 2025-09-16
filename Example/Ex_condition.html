@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>총 복습 문제</title>
+</head>
+<body>
+    <h3>직원 근무시간 급여 계산</h3>
+    <p>근무 시간 입력 : <input id="workhour" type="number"/></p>
+    <button onclick="calc()" type="button">급여 계산</button>
+    <p id="salary"></p>
+    <p id="massage"></p>
+    <p id="state"></p>
+
+    <script>
+        // 전역 변수 : 전지역에 사용 가능
+        function calc(){
+            let workhour=Number(document.getElementById('workhour').value);
+            let salary=document.getElementById('salary');
+            let massage=document.getElementById('massage');
+            let state=document.getElementById('state');
+            // 초기화
+            //  salary=0;
+            //  massage='';
+            //  state='';
+            // 지역 변수 : 지금 현재 function안에서만 사용 가능
+
+            // 급여
+            const work_1=workhour*10000;
+            const work_2=workhour*15000;
+            if(workhour<=8){
+                console.log(`급여 : ${work_1}원`);
+                salary.innerHTML=`급여 : ${work_1}원`;
+            }
+            if(workhour==0){
+                console.log(`급여 : 0원`);
+                salary.innerHTML=`급여 : 0원`;
+            }
+            if(workhour>8){
+                console.log(`급여 : ${work_2}원`);
+                salary.innerHTML=`급여 : ${work_2}원`;
+            }
+            // 근무 메시지
+            
+            switch(true){
+                case (workhour==0):
+                    console.log('출근하지 않았습니다.');
+                    massage.innerHTML='출근하지 않았습니다.';
+                    break;
+                case (workhour>0 && workhour <8):
+                    console.log('정상 근무');
+                    massage.innerHTML=`근무 상태 : 정상 근무`;
+                    break;
+                default:
+                    console.log('초과 근무');
+                    massage.innerHTML=`근무 상태 :초과 근무`;
+            }
+            // 급여 상태
+            // html에서 출력
+            state.innerHTML = workhour>0?'급여 있음':'무급';
+            console.log(workhour>0?'급여 있음':'무급');
+        }
+    </script>
+</body>
+</html>

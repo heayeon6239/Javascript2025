@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if 실습문제05</title>
+</head>
+<body>
+    <h3>문제: 국어, 영어, 수학 평균이 70 이상이면 "합격', 아니면 "불합격</h3>
+    
+    <input id="k_score" type="number">
+    <input id="e_score" type="number">
+    <input id="m_score" type="number">
+    <button type="button"onclick="con()">확인</button>
+    <p id="avr"></p>
+
+    <script>
+        // 1. function생성
+        // 2. document를 변수로 생성
+        // 3. if문 작성
+        function con(){
+            let k_score=Number(document.getElementById('k_score').value);
+            let e_score=Number(document.getElementById('e_score').value);
+            let m_score=Number(document.getElementById('m_score').value);
+            let avr=document.getElementById('avr');
+
+            console.log('여기까지 ok');
+            // let avg=round((k_score+e_score+m_score)/3);
+            // round() => 소수점 반올림하는 함수
+
+            if((k_score+e_score+m_score)/3 >=70){
+                avr.innerHTML='합격';
+                console.log('합격');
+            }else if((k_score+e_score+m_score)/3 <70 && (k_score+e_score+m_score)/3 >=0 ){
+                avr.innerHTML='불합격';
+                console.log('불합격');
+            }else{
+                console.log('입력해주세요');
+            }
+        }
+    </script>
+</body>
+</html>

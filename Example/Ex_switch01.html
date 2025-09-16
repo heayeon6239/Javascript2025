@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switch 연습문제01</title>
+</head>
+<body>
+    <button onclick="dayclick()" type="button">요일 출력</button>
+    <input id="week" type="number"/>
+    <p id="output"></p>
+
+    <script>
+        function dayclick(){
+            let week= Number(document.getElementById('week').value);
+            let output=document.getElementById('output');
+
+            console.log('출력1');
+
+            switch(week){
+                case 1:
+                    console.log('일요일');
+                    output.innerHTML='일요일';
+                    break;
+                case 2:
+                    console.log('월요일');
+                    output.innerHTML='월요일';
+                    break;
+                case 3:
+                    console.log('화요일');
+                    output.innerHTML='화요일';
+                    break;
+                case 4:
+                    console.log('수요일');
+                    output.innerHTML='수요일';
+                    break;
+                case 5:
+                    console.log('목요일');
+                    output.innerHTML='목요일';
+                    break;
+                case 6:
+                    console.log('금요일');
+                    output.innerHTML='금요일';
+                    break;
+                case 7:
+                    console.log('토요일');
+                    output.innerHTML='토요일';
+                    break;
+
+                // switch 에서 true 사용시 반드시 case 조건식 입력해야함
+                // case week==7:
+                //     console.log('토요일');
+                //     output.innerHTML='토요일';
+                //     break;
+            }
+
+            console.log('출력');
+        }
+                
+    </script>
+</body>
+</html>

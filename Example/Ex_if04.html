@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if 실습문제04</title>
+</head>
+<body>
+    <h3>문제: 사용자가 입력한 숫자가 1과 10 사이인지 확인</h3>
+    
+    <input id="num" type="number">
+    <button type="button"onclick="con()">확인</button>
+    <p id="in_n"></p>
+
+    <script>
+        // 1. function생성
+        // 2. document를 변수로 생성
+        // 3. if문 작성
+        function con(){
+            let num=Number(document.getElementById('num').value);
+            let in_n=document.getElementById('in_n');
+            if(num>=1 && num<=10){
+                in_n.innerHTML='범위 안에 있음';
+                console.log('범위 안에 있음');
+            }else{
+                in_n.innerHTML='범위 안에 없음';
+                console.log('없음');
+            }
+        }
+    </script>
+</body>
+</html>

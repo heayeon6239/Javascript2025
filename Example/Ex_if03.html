@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if 실습문제03</title>
+</head>
+<body>
+    <h3>문제: 온도가 0도 이하면 "영하", 0~30도는 "보통", 30도 이상은 "더움"</h3>
+    
+    <input id="tem" type="number">
+    <button type="button"onclick="con()">확인</button>
+    <p id="hot"></p>
+
+    <script>
+        // 1. function생성
+        // 2. document를 변수로 생성
+        // 3. if문 작성
+        function con(){
+            // .value 속성은 input안의 입력한 값을 읽어들인다.
+            let tem=Number(document.getElementById('tem').value);
+            let hot=document.getElementById('hot');
+            
+            if(tem<0){
+                hot.innerHTML='영하';
+                console.log('영하');
+            }
+            // if(tem>0 && tem<30)
+            if(tem>=0){
+                hot.innerHTML='보통';
+                console.log('보통');
+            }
+            if(tem>30){
+                hot.innerHTML='더움';
+                console.log('더움');
+            }
+            // console.log='check';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if 실습문제</title>
+</head>
+<body>
+    <h3>문제: 입력한 문자가 'y' 또는 'Y'면 "예", 아니면 "아니오"</h3>
+    <input id="text" type="text">
+    <button type="button"onclick="con()">확인</button>
+    <p id="ans"></p>
+
+    <script>
+        // 1. function생성
+        // 2. document를 변수로 생성
+        // 3. if문 작성
+        function con(){
+            // .value 속성은 input안의 입력한 값을 읽어들인다.
+            let text=document.getElementById('text').value;
+            let ans=document.getElementById('ans');
+            // 조건
+            // if(text=='y'|| text=='Y'){
+            //     ans.innerHTML='예';
+            //     console.log('예');
+            // }else{
+            //     ans.innerHTML='아니오';
+            //     console.log('아니오');
+            // }
+            if(text=='y'){
+                ans.innerHTML='예';
+                console.log('예');
+            }else if(text=='Y'){
+                ans.innerHTML='예';
+                console.log('예');
+            }else{
+                ans.innerHTML='아니오';
+                console.log('아니오');
+            }
+        }
+    </script>
+</body>
+</html>

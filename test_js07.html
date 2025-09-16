@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습문제7</title>
+</head>
+<body>
+    <input id="score" type="number" placeholder="점수 입력"/>
+    <button onclick="checkGrade()">등급 확인</button>
+    <p id="output"></p>
+
+    <script>
+        function checkGrade(){
+            let score1=Number(document.getElementById('score').value);
+            let grade=document.getElementById('output');
+            let grade1=score1>=90?'A':score1>=80?'B':score1>=70?'C':score1>=60?'D':'F';
+            grade.innerHTML=`등급:${grade1}`;
+            console.log(`등급:${grade1}`);
+        }
+    </script>
+</body>
+</html>

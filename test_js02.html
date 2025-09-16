@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습문제2</title>
+</head>
+<body>
+    <button onclick="problem2()">문제 2 : 두 수 더하기</button>
+        <p id="p2"></p>
+
+    <script>
+        function problem2(){
+            let pri=document.getElementById('p2');
+            let num01=7;
+            let num02=8;
+            // 값의 에러가 있는지 파악하기 위한 디버깅용
+            console.log(`num1:${num01},num02:${num02}`);
+            pri.innerHTML=`합계 : ${num01+num02}`;
+        }
+    </script>
+</body>
+</html>

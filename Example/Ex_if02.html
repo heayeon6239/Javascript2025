@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if 실습문제01</title>
+</head>
+<body>
+    <h3>문제: 영어 점수가 50점 이상이고 수학 점수가 50 이상이면"통과"</h3>
+    <input id="e_score" type="number">
+    <input id="m_score" type="number">
+    <button type="button"onclick="con()">확인</button>
+    <p id="pass"></p>
+
+    <script>
+        // 1. function생성
+        // 2. document를 변수로 생성
+        // 3. if문 작성
+        function con(){
+            // .value 속성은 input안의 입력한 값을 읽어들인다.
+            let e_score=Number(document.getElementById('e_score').value);
+            let m_score=Number(document.getElementById('m_score').value);
+            let pass=document.getElementById('pass');
+           
+            if(e_score>=50 && m_score>=50){
+                pass.innerHTML='통과!'
+                console.log('통과!');
+            }else{
+                console.log('불통');
+            }
+            
+        }
+    </script>
+</body>
+</html>
