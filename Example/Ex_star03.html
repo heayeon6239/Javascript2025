@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오른쪽 직각삼각형 만들기</title>
+</head>
+<body>
+    <p id="output"></p>
+    <script>
+        result='';
+        let output=document.getElementById('output');
+        let num=5;
+        for(let i=1;i<=num;i++){
+            for(let j=1;j<=num-i;j++){
+                result=result+'&nbsp&nbsp';
+            }
+            for(let k=1;k<=i;k++){
+                result=result+'*';
+            }
+            result=result+'<br/>';
+        }
+        output.innerHTML=result;
+    </script>
+</body>
+</html>

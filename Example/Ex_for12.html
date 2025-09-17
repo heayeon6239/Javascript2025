@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습문제 12</title>
+</head>
+<body>
+    <h3>직각삼각형 만들기 / 7줄 / 문자 : *</h3>
+    <p id="output"></p>
+    
+
+    <script>
+        let output=document.getElementById('output');
+        
+        let result='';
+
+        for(let i=7;i>=1;i--){
+            for(let j=7;j>=i;j--){
+                result=result+'&nbsp';
+            }
+            for(let k=1;k<=i;k++){
+                result=result+'*';
+            }
+            result=result+'<br/>'
+        }
+        output.innerHTML=result;
+    </script>
+</body>
+</html>

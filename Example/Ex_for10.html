@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습문제 10</title>
+</head>
+<body>
+    <h3>2단 ~ 9단 출력</h3>
+    <p id="output"></p>
+    
+
+    <script>
+        let output=document.getElementById('output');
+        let result='';
+        for(let n=2;n<=9;n++){
+            // 누적
+            result=result+n+'단<br/>'
+            for(let num=1;num<=9;num++){
+                // 2 X 1 = 2 형태의 출력
+                result=result+n+'X'+num+'='+n*num +'<br/>';
+            }
+            result=result+'<br/>'
+        }
+        output.innerHTML=result;
+    </script>
+</body>
+</html>

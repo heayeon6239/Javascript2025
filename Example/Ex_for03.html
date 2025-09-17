@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for문 연습 문제3</title>
+</head>
+<body>
+    <h3>문제: 1부터 10까지 짝수만 출력</h3>
+    <p id="output"></p>
+
+    <script>
+        let output=document.getElementById('output');
+       
+        let result=0;
+
+       for(let num=1;num<=20;num++){
+            
+           // if(num % 2 !=0)
+            if(num % 2 != 1){
+                    result=result+num+' ';
+                }
+        }
+        output.innerHTML=result;
+        
+    </script>
+</body>
+</html>
