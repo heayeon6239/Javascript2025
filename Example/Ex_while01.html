@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>while문 연습 문제</title>
+</head>
+<body>
+    <h3>문제: 1부터 10까지 출력</h3>
+    <p id="output"></p>
+
+    <script>
+        let output=document.getElementById('output');
+        
+        let num=1;
+        // 결과를 담을 변수 초기화
+        let result=0; //0으로 계속
+        while(num<=10){
+             // 숫자를 한칸씩 띄어쓰는 방식
+            result=result + num + ' ';
+            // 0+1+'(공백)'+2+' '+3+' '
+            num++;
+            // n=1+1
+            // n=2+1
+            // n=3+1
+        }
+        // n이 11되면 출력
+        output.innerHTML=result;
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>while문 연습 문제2</title>
+</head>
+<body>
+    <h3>문제: 사용자 입력 횟수만큼 HELLO 출력</h3>
+    <input id="num" type="number"/>
+    <button onclick=play() type="button">실행</button>
+    <p id="output"></p>
+
+    <script>
+        function play(){
+            let num=Number(document.getElementById('num').value);
+            let output=document.getElementById('output');
+            // let hello=num*'hello';
+
+            // 입력할 숫자를 담을 변수 초기화
+            let n=1;
+            let result=''; // 문자 데이터를 출력하기 위해 ''으로 초기화
+
+            // num은 input이 입력받는 값을 담은 변수
+            while(n<=num){
+                result=result+'hello<br/>';
+                // n을 누적하는 공식
+                n++;
+                
+            }
+            output.innerHTML=result;
+            console.log(result);
+        }
+    </script>
+</body>
+</html>
