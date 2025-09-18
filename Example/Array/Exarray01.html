@@ -3,24 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>for문 연습 문제5</title>
+    <title>Array 기초 연습</title>
 </head>
 <body>
-    <h3>문제: 1부터 10까지 홀수의 합 출력</h3>
     <p id="output"></p>
-
     <script>
         let output=document.getElementById('output');
-       
-        let result=0;
+        let numbers=[10,20,30,40,50];
 
-       for(let i=1;i<=10;i++){
-        if(i % 2 == 1){
-            result=result+i;
-        }
-        
-       }
-        output.innerHTML=result;
+        output.innerHTML=numbers[2];
+
     </script>
 </body>
 </html>

@@ -3,24 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>for문 연습 문제5</title>
+    <title>Array 기초 연습</title>
 </head>
 <body>
-    <h3>문제: 1부터 10까지 홀수의 합 출력</h3>
+    <h3>문제 : names 배열 모든 요소 for문 출력</h3>
     <p id="output"></p>
-
     <script>
         let output=document.getElementById('output');
-       
-        let result=0;
+        let names = ['Jason', 'Alice', 'Candy', 'Chris'];
+        let result='';
 
-       for(let i=1;i<=10;i++){
-        if(i % 2 == 1){
-            result=result+i;
+        for(let i=0;i<=names.length-1;i++){
+            result=result+names[i]+' ';  // 숫자 + -> 더하기   문자 + -> 나열
         }
-        
-       }
+
         output.innerHTML=result;
+
     </script>
 </body>
 </html>

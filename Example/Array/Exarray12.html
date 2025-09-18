@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array 심화학습</title>
+</head>
+<body>
+    <h3>배열 + for문 + if문 문제 2</h3>
+    <label>5번 장바구니 가격 배열 입력 (예: 12000,5000,15000,3000,7000)</label>
+    <input type="text" id="shopInput">
+    <button type="button" onclick="resClick()">결과 확인</button>
+    <p id="output"></p>
+
+    <script>
+        let carts=[];
+
+        function resClick(){
+            let shopInput=document.getElementById('shopInput').value;
+            let output=document.getElementById('output');
+            let result='';
+
+            carts=shopInput.split(',').map(Number);
+
+            for(let i=0;i<=carts.length-1;i++){
+                // switch ~ case =1, case='출석': (다른 관계 연산자 사용불가 (>,<,=,!....))
+                // switch(true) ~ >= 10000 (관계 연산자 사용 가능)
+
+                // trim() => 공백이라는 문자를 제거하는 함수 (숫자는 안됨)
+                switch(true){
+                    case cart[i]>=10000:
+                        result=cart[i]+'고가';
+                    break;
+                    case cart[i]>=5000:
+                        result=cart[i]+'중저가';
+                    break;
+                    default:
+                        result= result+cart[i]+'저가';
+                }
+
+                // if  사용 버전
+                if(carts[i]>=10000){
+                    result=result+carts[i]+': 고가, ';
+                }else{
+                    result=result+carts[i]+': 저가, ';
+                }
+            }
+            result=result.slice(0,-1);
+            output.innerHTML=result;
+            console.log(result);
+        }
+
+       
+        
+    </script>
+</body>
+</html>

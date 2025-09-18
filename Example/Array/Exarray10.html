@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array 심화학습</title>
+</head>
+<body>
+    <h3>배열 + for문 + if문 문제 2</h3>
+    <label>3번 출석 배열 입력(출석,결석,지각) (예: 출석,결석,출석,결석,지각,출석)</label>
+    <input type="text" id="aInput">
+    <button type="button" onclick="resClick()">결과 확인</button>
+    <p id="output"></p>
+
+    <script>
+        // 배열 선언
+        let attend=[];
+        
+        function resClick(){
+            let aInput=document.getElementById('aInput').value;
+            let output=document.getElementById('output');
+            let result='';
+
+            attend=aInput.split(',').map(String); // ,가 없어지면서 배열이 새로 생성됨
+
+            for(let i=0;i<=attend.length-1;i++){
+                // 자바스크립트는 같다 == 는 정확한 비교가 어려움
+                // === 가 정확한 메모리 값 비교 가능
+                // trim() => 왼쪽, 오른쪽 공백을 제거하는 함수(결 석 -> 이건 안됨) / !배열 뒤에 위치함!
+                if(attend[i].trim() === '출석'){
+                    result=result+'○'+',';
+                }else if(attend[i].trim() === '결석'){
+                    result=result+'X'+',';
+                }else{
+                    result=result+'△'+',';
+                }
+            }
+
+            // ○,X,○,X,△,○ -> 결과값은 attend가 아니라 result에 들어가있음
+            // attend는 배열 선언을 함, 
+            // result는 배열 선언을 하지 않아도, 자바스크립트 득성상
+            // 문자열 통을 배열로(개별 하나하나) 인식함
+            // -> slice(0,-1)도 가능함 (배열만 가능한 함수)
+            result = result.slice(0,-1);
+            // 출력은 for문 바깥쪽에
+            output.innerHTML=result;
+        }    
+    </script>
+</body>
+</html>

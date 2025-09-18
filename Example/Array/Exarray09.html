@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array 심화학습</title>
+</head>
+<body>
+    <h3>배열 + for문 + if문 문제</h3>
+    <label>2번 숫자 배열 입력 (예: 12,7,5,20,33,18)</label>
+    <input type="text" id="numInput">
+    <button type="button" onclick="numClick()">결과 확인</button>
+    <p id="output"></p>
+
+    <script>
+        // 배열 선언
+        let numbers=[];
+        
+        function numClick(){
+            let numInput=document.getElementById('numInput').value;
+            let output=document.getElementById('output');
+            let result='';
+            let num2=0;
+            let num1=0;
+
+           numbers=numInput.split(',').map(Number);
+           console.log(numbers);
+
+           for(let i=0;i<=numbers.length-1;i++){
+            // 3항 연산자 이용
+            // result=result+numbers[i] % 2 == 0?num1+'' : num2+''; // 나열해야해서 +''
+
+            // if 이용
+            if(numbers[i] % 2 == 0){
+                 num2=num2+numbers[i]+' ';
+            }else{
+                num1=num1+numbers[i]+' ';
+            }
+                result='짝수: '+num2+ ' / '+'홀수: '+num1;
+           }
+            //배열이름.slice(start array, end array)
+            // slice(start array,end array)=> 양수 : 왼 -> 오
+            // slice(start array,end array)=> 음수 : 오 -> 왼
+            numbers=numbers.slice(0,-1);
+            output.innerHTML=result;
+        }    
+    </script>
+</body>
+</html>
