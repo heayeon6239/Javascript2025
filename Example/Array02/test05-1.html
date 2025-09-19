@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영화 평점 분석</title>
+    <style>
+        span{
+            color: purple;
+            font-weight: bold;
+        }
+    </style>
+    
+<body>
+    <h2>영화 평점 분석</h2>
+    <input type="text" id="movieName"/>
+    <button type="button" onclick="reviewClick()">평점 확인</button>
+    <p id="output"></p>
+
+    <script>
+        let movies=['어벤져스','인셉션','기생충','라라랜드']
+        let scores=[9,8,10,7]
+
+        function reviewClick(){
+            let movieName=document.getElementById('movieName').value;
+            let output=document.getElementById('output');
+            let result='';
+
+            for(let k=0;k<=movies.length-1;k++){
+                switch(true){
+                    case movieName == movies[k]:
+                        if(scores[k]>=8){
+                                result=movies[k]+' : '+scores[k]+'점 '+'<span>추천</span>'+'<br/>';
+                        }else{
+                            result=movies[k]+' : '+scores[k]+'점 '+'<br/>';
+                        }
+                    break;
+                }
+            }
+
+            // for(let i=0;i<=scores.length-1;i++){
+            //     if(scores[i]>=8){
+            //         result=result+movies[i]+' : '+scores[i]+'점 '+'<span>추천</span>'+'<br/>';
+            //     }else{
+            //         result=result+movies[i]+' : '+scores[i]+'점 '+'<br/>';
+            //     }
+            // }
+            output.innerHTML=result;
+            console.log('dk');
+        }
+    </script>
+    
+</body>
+</html>

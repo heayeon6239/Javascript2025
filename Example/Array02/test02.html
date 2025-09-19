@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>책 재고 현황</title>
+    <style>
+        span{
+            color: red;
+        }
+    </style>
+    
+<body>
+    <h2>책 재고 현황</h2>
+    <button type="button" onclick="clickp()">재고 확인</button>
+    <p id="output"></p>
+
+    <script>
+        let code=['자바스크립트 입문','HTML & CSS','파이썬 기초','데이터 분석'];
+        let stock=[10,3,7,2];
+        
+
+        function clickp(){
+            let output=document.getElementById('output');
+            let result='';
+            
+            for(let i=0;i<=stock.length-1;i++){
+               
+                switch(true){
+                    case stock[i]<=5 :
+                        result =result+code[i]+' : '+stock[i]+' - '+ '<span>재고 부족</span>'+'<br/>';
+                    break;
+                    default : 
+                        result=result+code[i]+' : '+stock[i]+' - '+  '재고 충분'+'<br/>';
+                    break;
+                }
+                    
+            }
+            output.innerHTML=result;
+            console.log(result);
+        }
+    </script>
+</body>
+</html>

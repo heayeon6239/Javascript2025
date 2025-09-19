@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학생 키 비교</title>
+    
+    
+<body>
+    <h2>학생 키 비교</h2>
+    <input type="text" id="tall"/>
+    <button type="button" onclick="tallClick()">평점 확인</button>
+    <p id="output"></p>
+
+    <script>
+        let names=['철수','영희','민수','수지','준호']
+        let talls=[172,165,180,158,175]
+
+        function tallClick(){
+            let tall=document.getElementById('tall').value;
+            let output=document.getElementById('output');
+            let result='';
+
+            for(let i=0;i<=talls.length-1;i++){
+                switch(true){
+                    case tall == names[i]:
+                        if(talls[i]>=170){
+                            result=result+names[i]+' : '+talls[i]+'cm'+' - 키 큰 학생';
+                        }else{
+                            result=result+names[i]+' : '+talls[i]+'cm'+' - 키 작은 학생';
+                        }
+                }
+                
+            }
+            output.innerHTML=result;
+        }
+    </script>
+   
+    
+</body>
+</html>

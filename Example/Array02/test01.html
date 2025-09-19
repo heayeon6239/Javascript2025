@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학생 성적표</title>
+    <style>
+        .green{
+            color: rgb(2, 187, 2);
+        }
+        .red{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2>학생 성적표</h2>
+    <button type="button" onclick="score()">성적표 출력</button>
+    <p id="output"></p>
+
+    <script>
+        //배열 지정
+        let names=['철수','영희','민수','수지','준호'];
+        let scores=[85,58,92,77,61];
+        
+        function score(){
+            // 변수 지정
+            let output=document.getElementById('output');
+            let result1='';
+            let result='';
+            // 점수 합/불 비교 for문
+            for(let i=0;i<=scores.length-1;i++){
+
+                // result += scores[i]>=60?`${scores[i]}'합격'`:`${scores[i]}'불합격'`;
+                if(scores[i]>=60){
+                    result=result+names[i]+' : '+scores[i]+'점 '+'- <span class="green" >합격</span>'+'<br/>';
+                }else{
+                    result=result+names[i]+' : '+scores[i]+'점 '+'- <span class="red">불합격</span>'+ '<br/>';
+                }
+            }
+            // 누구의 점수인지 매칭하기 위한 for문
+            
+            
+            output.innerHTML=result;
+        }
+    </script>
+</body>
+</html>
