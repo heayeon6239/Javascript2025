@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습문제 1</title>
+</head>
+<body>
+    <h2>2. 성적표</h2>
+    <p id="output"></p>
+
+    <script>
+        let output=document.getElementById('output');
+        let scores = [
+             [85, 90, 80],  // 00 01 01
+             [70, 60, 75],  // 10 11 11
+             [95, 100, 90] // 20 21 21
+             ];
+        let sum=0;
+        let avg=0;
+        let score='';
+        let totalResult='';
+
+        for(let i=0; i<scores.length; i++){ // 행
+            score = '';
+            sum=0;
+            avg=0;
+            for(let j=0; j<scores[i].length; j++){ // 열
+                score += scores[i][j]+' ';
+                sum += scores[i][j];
+                avg = sum / scores[i].length;
+                console.log(score);
+            }
+            totalResult += score+' | '+'총점 :'+sum+'평균 :'+avg.toFixed(2)+'<br/>';
+        }
+        output.innerHTML=totalResult;
+        console.log(totalResult);
+       
+    </script>
+</body>
+</html>

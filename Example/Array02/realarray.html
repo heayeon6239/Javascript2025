@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습문제 1</title>
+</head>
+<body>
+    <h2>1. 좌석 배치표 (5X5)</h2>
+    <p id="output"></p>
+
+    <script>
+        let output=document.getElementById('output');
+        let result='<table border="1">';
+        let arr01=Array.from(Array(5),()=>new Array(5));
+        let num=1; 
+        for(let i=0;i<arr01.length;i++){ // 행
+            result=result+'<tr>'
+            for(let j=0;j<arr01[i].length;j++){  //열
+                arr01[i][j]=num++;
+                result=result+'<td>'+arr01[i][j]+'</td>';
+            }
+            // result=result+arr01[i];
+             console.log(arr01[i]);
+             result=result+'</tr>'
+        }
+        result=result+'</table>'
+        output.innerHTML=result;
+       
+    </script>
+</body>
+</html>

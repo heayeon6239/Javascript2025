@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습문제 1</title>
+</head>
+<body>
+    <h2>3. 달력 만들기</h2>
+    <p id="output"></p>
+
+    <script>
+        let output=document.getElementById('output');
+        let result = '<table border="1">';
+        let weekdays = ['일', '월', '화', '수', '목', '금', '토'];
+        
+        let arr=Array.from(Array(6),()=>new Array(7)); // 현재 배열은 비어있는 상태
+
+        let num=1; // 기준
+        let lastday=31;
+
+        // weekdays 출력
+        result+='<tr>';
+        for(let k=0;k<weekdays.length;k++){ // 1차원 배열
+            result=result+'<th>'+weekdays[k]+'</th>';
+        }
+        result+='</tr>';
+        
+        // 날짜 출력
+        for(let i=0;i<arr.length;i++){ // 행
+            result+='<tr>';
+            for(let j=0;j<arr[i].length;j++){ // 열
+                if(num<=lastday){
+                    arr[i][j]=num++; // ++ 는 누적의 한 요소
+                }else{
+                    arr[i][j]='';
+                }
+                
+                result+='<td>'+arr[i][j]+'</td>';
+            }
+            result+='</tr>';
+            console.log(arr[i]);
+            // 빈 줄이 생기는 문제 해결
+            if(num > lastday) break; // break : 멈추고 빠져나와
+        }
+        result+='</table>';
+        output.innerHTML=result;
+       
+    </script>
+</body>
+</html>
