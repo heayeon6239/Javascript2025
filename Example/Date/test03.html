@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>달력</title>
+</head>
+<body>
+    <div class="container"></div>
+        <button type="button" onclick="before01">이전</button>
+        <p id="output">2025년 9 월</p>
+        <button type="button" onclick="after01">이후</button>
+    </div>
+
+    <script>
+        let wee=['SUN','MON','TUE','WED','THU','FRI','SAT']
+        let result='<table border="1">';
+        let output=document.getElementById('output');
+
+        let arr01=Array.from(Array(7),() => new Array(7));
+
+        // 요일 출력
+        result+='<tr>'
+        for(let i=0;i<arr01.length;i++){
+            result+='<td>'+wee[i]+'</td>';
+        }
+        result+='</tr>'
+       
+
+
+        // 올해년도 구하기
+        let today01=new Date();
+        let year01=today01.getFullYear();
+        console.log(year01);
+
+        // 오늘 날짜의 월 구하기
+        let today02=new Date();
+        let month01=today02.getMonth();
+        console.log(month01+1);
+
+        // 마지막 일자 산출
+        let today03=new Date();
+        let lastDay01=today03.get
+
+
+        // 1일의 요일 산출
+        let today04=new Date('2025/9/1'); // 9월 1일 날짜 가져오기
+        let sepweek=today04.getDay();
+        let day1=0;
+        for(let i=0;i<arr01.length;i++){
+            for(let j=0;j<arr01[i].length;j++){
+                if(sepweek===j){
+                    day1=wee[j];
+                }
+            }
+        }
+        console.log(day1);
+
+        // 당해년도 월의 시작일자
+
+
+        
+        // 당해년도 월의 시작일자의 요일
+
+        // 배열 초기화
+
+        // 시작일부터 마지막일까지 배열에 저장
+
+        // 일주일 7(토요일)일이 되면 줄바꿈하기
+
+        // 이전, 다음은 년월일 증가, 감소
+
+        // 요일 산출한 날짜부터 말일까지 1씩 증가하기
+
+        
+
+        
+        let num=0;
+        for(let i=0;i<arr01.length;i++){ // 행
+            result+='<tr>';
+            for(let j=0;j<arr01[i].length;j++){ // 열
+                if(num<=30){
+                    arr01[i][j]=num++; // ++ 는 누적의 한 요소
+                }else{
+                    arr01[i][j]='';
+                }
+                
+                result+='<td>'+arr01[i][j]+'</td>';
+            }
+            result+='</tr>';
+            console.log(arr01[i]);
+            // 빈 줄이 생기는 문제 해결
+           if(num > 30) break; // break : 멈추고 빠져나와
+        }
+        
+        result+='</table>'
+        output.innerHTML=result;
+        console.log(sepweek);
+
+    </script>
+</body>
+</html>

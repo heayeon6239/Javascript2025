@@ -60,27 +60,26 @@
         } 
         outavg.innerHTML='[과목별 평균]'+'</br>'+result2;
     
-         let avg3=0;
-         let sum3=0;
+        
+         let score=0;
         // 최고 점수 학생
         let max=0;
+        let result3=0;
         // 1. max값 비교해서 찾기
         // 2. max값의 행의 index번호 찾기
 
-        for(let i=0;i<scores.length;i++){
-           for(let j=0;j<scores[i].length;j++){
-                sum3+=scores[i][j];
-                avg3+=sum3 / scores[i].length;
-                if(max<avg3){
-                    max=avg3;
-                    
-                }
-                
-            }
+        for(let i=0;i<scores.length;i++){ // 행
+            score=0;
             
+           for(let j=0;j<scores[i].length;j++){ // 열
+                if(max<scores[i][j]){
+                    max=scores[i][j];
+                    result3=names[i]; 
+                }
+            }
         }
         console.log('최댓값:'+max);
-       
+        best.innerHTML='[최고 점수 학생]'+'<br/>'+result3+'['+max+ '점]';
     </script>
 </body>
 </html>

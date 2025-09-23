@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date 코어 객체 설명</title>
+</head>
+<body>
+    <script>
+        // 객체(object)란 : 자바스트립트에 내장된 함수 
+        //                 (Array, Date, String, Math) - 앞에 모두 대문자
+
+        // 객체는 new Date()으로 생성하여 사용
+
+
+
+
+        //01.
+
+        let today=new Date(); // Date()객체를 new로 생성하여 today 변수에 담기
+        console.log(`오늘 날짜 : ${today}`)
+        console.log(typeof today); // 객체이기 때문에 object 라는 type 이 출력됨
+        // 오늘 날짜 : Tue Sep 23 2025 11:03:52 GMT+0900 (한국 표준시)
+        // 아무 값을 안쓰면 오늘 날짜 출력
+
+
+
+
+        //02.
+
+        let OneDate=new Date(86400000)
+        // Date(값) => 1970-01-01 부터 값을 계산
+        // 86,400,000 => 1day를 의미
+        // 1s => 1,000ms
+        // 1m =>60s * 1,000ms => 60,000ms
+        // 1h =>60m * 60,000ms => 3,600,000ms
+        // 1d =>24h * 3,600,000ms => 86400000
+        console.log(OneDate);
+        // Fri Jan 02 1970 09:00:00 GMT+0900 (한국 표준시)
+
+
+
+
+        //03.
+
+        // Date(인수) 인수 => 함수 안의 값을 의미
+        // 인수 날짜와 시간을 문자열로 입력
+        let date01=new Date('september 08, 2025, 14:10:00');
+        console.log(date01);
+        // Mon Sep 08 2025 14:10:00 GMT+0900 (한국 표준시)
+
+        let date02=new Date('2025/09/08/14:10:00');
+        console.log(date02);
+        // Mon Sep 08 2025 14:10:00 GMT+0900 (한국 표준시)
+
+
+
+
+        // 04.
+
+        // new Date(year, month, hour, minute, second, millisencond)
+        // 8월 -> 9월 (0부터 시작)!!!
+        let date03=new Date(2024,8);
+        console.log(date03);
+        // Sun Sep 01 2024 00:00:00 GMT+0900 (한국 표준시)
+
+
+
+
+        // 05.
+
+        // Date 생성자 new 연산자 없이 
+        // 결과 값을 문자열로 반환
+        // typeof 변수이름 => 변수에 해당하는 데이터의 타입이 출력됨
+        let date04=Date();
+        console.log(typeof date04, date04);
+        // Tue Sep 23 2025 11:36:38 GMT+0900 (한국 표준시)
+        // string Tue Sep 23 2025 11:38:39 GMT+0900 (한국 표준시) - string이라는 type이 출력
+        //                                                         (new를 쓰지 않아 객체가 아닌 문자)
+
+
+
+        // 오늘 날짜/시간 동시에 출력
+        let now=Date.now(); // .now() => 메소드(=함수) / 함수라서 생성할 필요 없음
+        console.log(now / 86400000 / 365);
+        // 1758595409912
+        // 55.76469639453323 => 1970-01-01 +55 => 2025
+
+
+        // Date.parse
+        let d=Date.parse('jan 2,1970 00:00:00 UTC'); // 세계협정시간
+        console.log(d);
+        // 86400000
+
+
+        // Date의 메소드를 이용해서 get ~ : 출력, set ~ : 수정
+        // getter, setter
+        let today03=new Date()
+        // 오늘 날짜의 년도만 추출
+        let year01=today03.getFullYear();
+        console.log('오늘 날짜의 년도 : '+year01);
+        // 오늘 날짜의 년도 : 
+        
+
+        // 날짜의 년도 수정
+        let today04=new Date();
+        today04.setFullYear(2000); //  오늘 날짜의 년도를 2000년으로 수정 / 출력안됨
+        let year02=today04.getFullYear(); // getFullYear() -> 출력되게 만듦
+        // setFullYear()수정하고 난후 getFullYear()로 출력
+        console.log(year02);
+        // 2000
+
+
+        // 오늘 날짜의 월을 3월로 변경하여 날짜 출력
+        let today05=new Date();
+        // 월 : 1월 0, 12월 11일
+        today05.setMonth(3); // 0(1월) 1(2월) 2(3월) 3(4월) => 3 = 4번째 => Apr 4월
+        let month01=today05.getMonth();
+        console.log(month01, today05);
+
+
+        // 월과 일 수정
+        let today06=new Date();
+        today06.setMonth(11,1) // (월, 일) 11+1 => 12월 / 1 => 월요일
+        let month02=today06.getMonth();
+        let day01=today06.getDay(); // 요일
+        let date05=today06.getDate(); // 일
+        console.log(month02,day01,date05);
+
+
+        // 요일 출력
+        let today07=new Date();
+        // 요일 출력 메소드 getDay() : 0(일요일) ~ 6(토요일)
+        // 요일의 년, 월, 일 => getDate() : 2025-09-23  출력
+        let wee=['일','월','화','수','목','금','토']
+        let weekdays=today07.getDay(); // weekdays = 2 (화) / 오늘 요일의 index 번호
+        let week='';// 요일 담을 변수
+        // for문
+        for(let i=0;i<wee.length;i++){
+            if(i===weekdays){
+                week=wee[i]
+                break; // 찾았으면 종료
+            }
+            
+        }
+        console.log(week);
+    </script>
+</body>
+</html>
