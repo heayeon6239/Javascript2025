@@ -16,6 +16,16 @@
     <p id ="output4"></p>
     <button onclick="day03()">5.하루 후, 일주일 후 날짜 출력</button>
     <p id ="output5"></p>
+    <button onclick="day04()">6.날짜 비교</button>
+    <p id ="output6"></p>
+    <button onclick="day05()">7.월의 마지막 날 구하기</button>
+    <p id ="output7"></p>
+    <button onclick="day06()">8.특정 요일 찾기</button>
+    <p id ="output8"></p>
+    <button onclick="day07()">9.시간 차 계산</button>
+    <p id ="output9"></p>
+    <button onclick="day08()">10.요일에 따라 메시지 출력</button>
+    <p id ="output10"></p>
 
     <script>
         // 01. 현재 연도 출력
@@ -67,7 +77,7 @@
             console.log(birth01); //  Mon Nov 24 2025 00:00:00 GMT+0900 (한국 표준시)
             // let day02=((birth01.getTime()-now01.getTime())/86400000).tofixed(0);
             let day022=((birth01 - today)/86400000).toFixed(0);
-            // getTime()이용하여 시간까지 빼기한 결과
+            // getTime()이용하여 시간까지 빼기한 결과---------------------------???
             
             output4.innerHTML=day022;
             // console.log(day02);
@@ -80,9 +90,9 @@
             let output5=document.getElementById('output5');
 
             // 하루 후 날짜
-            let dayplus=new Date(now01); // now01 ??
-            dayplus.setDate(now01.getDate()+1); 
-            // 오늘 날짜의 요일 : getDay()
+            let dayplus=new Date(now01); // now01 ----------------------?? 하루 후 날짜 변수에 우선 현재 날짜를 넣어줌..?
+            dayplus.setDate(now01.getDate()+1); // ---------- setDate,getDate의 위치가 이해가 안됨,,
+            // 오늘 날짜의 요일 : getDay()             ( (now01의 출력값 => 현재날짜) 에 +1 한 것을 setDate(수정)에 넣어줌?)
             // 오늘 날짜의 일 : getDate()
             // 일 + 1 => 수정 : setDate()
 
@@ -96,7 +106,120 @@
         }
         // 함수 호출
         day03(); // function이 위에 있어야 호출 가능 / 아래 생성된 함수를 위에서 불러오는 건
-                 // 호이스팅문제로 안될 때가 많음000000000000000000000000000000000000000
+                 // 호이스팅문제로 안될 때가 많음
+
+
+
+        // 06. 날짜 비교
+        function day04(){
+            let output6=document.getElementById('output6');
+            // 날짜 비교를 위한 변수
+            let firstDay=new Date('2025-09-23'); // -----------------------------? new Date를 사용하는 이유???
+            let secondDay=new Date('2025-12-25'); // -----------? 객체는 오브젝트 통으로 뭐가 더 미래인지 비교 가능한지?
+            let year02=0;
+            let month01=0;
+            
+            // 년,월,일을 따로 비교하지 않아도 된다면
+            if(firstDay.getTime()>secondDay.getTime()){
+                result=firstDay;
+            }else if(firstDay.getTime()<secondDay.getTime()){
+                result=secondDay;
+            }
+            year02=result.getFullYear();
+            month01=result.getDate(); // ------------? getMonth가 뽑아지지 않음
+            
+            
+            output6.innerHTML=year02+'년 '+month01+'일';
+            console.log(result);
+        }
+
+        // 07. 월의 마지막 날 구하기 
+        function day05(){
+            
+            let output7=document.getElementById('output7');
+
+            let date01=new Date(2025,10,0); 
+            let lastDate=date01.getDate();
+            
+            output7.innerHTML=lastDate+'일';
+            //console.log(result);
+        }
+
+
+
+        // 08. 특정 요일 찾기 
+        function day06(){
+            // let now01 =new Date(2025,11,1); // 10월 날짜 가져오기
+            // let output8=document.getElementById('output8');
+            // // 이번달 1일의 요일만 추출
+            // let onlyWeek=now01.getDay(); // 3 (수) 
+            // // 이번달의 일만 추출
+            // let date=now01.getDate(); // 1
+            // // 1일에 해당하는 요일과 첫번째 금요일 찾기
+            // for(let i=0;i<=onlyWeek+7;i++){ // 3-(3+7)일까지 돌림
+            //     if(i===5-onlyWeek){
+            //         result=date+i;
+            //     }
+            // }
+            // 1. today()
+            // 2. 1일이 무슨 요일인지
+            // 3. year,month 구함
+            let result=0;
+            let today =new Date('2025/03/1');
+            let year =today.getFullYear();
+            let month=today.getMonth();
+
+            // 이번달의 1일 생성
+            let date= new Date(year,month,1);
+
+            // 요일 찾기(0: 일 ~ 6: 토) 5 : 금요일 
+            while(date.getDay()!==5){
+                // 수정 => setDate
+                date.setDate(date.getDate()+1); // 5가 될때까지 1씩 증가
+            }
+
+            console.log(`이번달의 첫번째 금요일은 ${date.getDate()}입니다.`)
+
+            // for문
+            // 1 ~ 7까지만 돌림
+            // let firstDate= 0; // 금요일을 넣을 변수
+            // for(let i=1;i<=7;i++){
+            //     let date= new Date(year,month,i);
+            //     if(date.getDay()==5){
+            //         firstDate=i;
+            //         break;
+            //     }
+            // }
+            // console.log(`이번달의 첫번째 금요일은 ${firstDate}입니다.`)
+
+
+           
+            output8.innerHTML=result;
+            //console.log(result);
+        }
+
+
+        // 10. 요일에 따라 메시지 출력 
+        function day08(){
+            let now01 =new Date(); // 날짜 가져오기
+            let output10=document.getElementById('output10');
+            // 오늘 요일 가져오기
+            let todayWeek=now01.getDay(); // 3(수요일)
+            // 요일 배열
+            let wee=['일','월','화','수','목','금','토'];
+            
+            for(let i=0;i<wee.length;i++){
+                if(todayWeek>0 && todayWeek <6){
+                    result='열심히 일하는 날!';
+                }else{
+                    result='주말이에요!';
+                }
+            }
+
+           
+            output10.innerHTML=result;
+            
+        }
     </script>
 </body>
 </html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숫자 맞추기 게임</title>
+    <style>
+        .container{
+            border: 1px solid red;
+            width: 300px;
+            height: 500px;
+            background-color: rgb(230, 243, 225);
+            /* 중앙정렬 */
+            margin: 0 auto; 
+            text-align: center;
+        }
+        .container h3{
+            color: rgb(79, 82, 78);
+            
+            letter-spacing: 3px;
+            font-weight: 700;
+            border-bottom: 2px solid rgb(93, 122, 145);
+            width: 200px;
+            padding: 10px;
+            margin: 10px auto;
+        }
+        .container .boxbutton{
+            border: 1px solid red;
+            margin-top: 70px;
+        }
+        .container button{
+            background-color: rgb(180, 180, 180);
+            width: 200px;
+            border-radius: 3px;
+            border: none;
+            height: 30px;
+            color: white;
+            cursor: pointer;
+        }
+        .container button:hover{
+            background-color: rgb(167, 167, 167);
+        }
+        .container #numbox{
+            border: none;
+            width: 200px;
+            height: 30px;
+            border-radius: 3px;
+            display: block;
+            margin: 10px auto;
+            padding: 0;
+
+
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>숫자 맞추기 게임</h3>
+        <p>1에서 100사이의 수를 입력하세요.</p>
+        <div class="boxbutton">
+            <input type="number" id="numbox"/>
+            <button type="button" onclick="updown()">확인</button>
+        </div>
+        <p id="output"></p>
+        <p id="output2"></p>
+    </div>
+
+    <script>
+        // 1 ~ 100 랜덤 숫자 추출 ( 정답 )
+            let randomNum=Math.floor(Math.random()*100);
+            let count=0;
+        function updown(){
+            let output=document.getElementById('output'); 
+            let numbox=document.getElementById('numbox').value; // input 입력창
+            
+            
+            
+            console.log(randomNum);
+            
+            // if문
+            if(numbox>randomNum){
+                result='Down!';
+            }else if(numbox<randomNum){
+                result='Up!';
+            }else if(numbox==randomNum){
+                result='Bingo!';
+            }
+            
+              count++;
+            console.log(count);
+            output.innerHTML=result;
+            output2.innerHTML='시도 횟수 : '+count+'회';
+        }
+      
+    
+    </script>
+    
+</body>
+</html>

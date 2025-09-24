@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String 객체 설명</title>
+</head>
+<body>
+    <script>
+        // let str = "hello"는 new로 생성한 (ex new Date) 객체(Object)는 아니지만,
+        // String(래퍼오브젝트)이기 때문에
+        // String Object가 사용하는 모든 프로퍼티(=메소드)를
+        // 사용할 수 있다.
+        // 이유는 자바스크립트가 일반 String을 객체화하여 변형하기 때문이다.
+
+        let str = "Hello"; // new 안함 / 데이터 타입 : string
+        console.log(`데이터 타입:${typeof str}`); // 데이터 타입:string
+        console.log(`${str.charAt(0)}`); // H
+        console.log(`${str.charAt(1)}`); // e
+        console.log(`${str.charAt(2)}`); // l
+        console.log(`${str.charAt(3)}`); // l     => 4줄을 써야 출력가능
+
+        for(let i=0;i<str.length;i++){ 
+            console.log(str.charAt(i));
+        } // 배열이기 때문에 for문 가능 => 한줄로 출력가능
+
+        for(let i=0;i<str.length;i++){ 
+            console.log(str[i]);
+        } 
+
+        // new String() 객체를 생성
+        let str02= new String('Boys and Girls');
+        let str03="!";
+        // 태그를 사용하지 않고 브라우저에 출력하는 명령어
+        document.write('str02'+str02+'</br>');
+        document.write('str03'+str03+'</br>');
+
+
+        document.write(str02.charAt(0)+'</br>');
+        // String 데이터 타입은 공백도 문자이다.
+
+        // concat() 프로퍼티는 문자합치기( 한줄로 나열 )
+        document.write(str02.concat(str03)+'</br>');
+
+        // S 라는 문자가 몇번째 위치인지 index번호 출력 // 3
+        document.write(str02.indexOf('s')+'</br>');
+
+        // slice(start,end) => 문자 자르기  end-1까지 자름 // and
+        document.write(str02.slice(5,8)+'</br>');
+
+        // substr(start, length) => 시작부터 길이까지 자르기 // and Girl
+        document.write(str02.substr(5,8)+'</br>');
+
+        // replace(찾을 문자, 바꿀문자) => 찾을 문자를 바꿀 문자로 변경함 // Boys or Girls
+        document.write(str02.replace('and','or')+'</br>');
+
+        // str02.repeat( 반복할 횟수) => 문자를 반복할 횟수만큼 출력
+        document.write(str02.repeat(3)+'</br>');
+        
+
+        // 문제 --------------------------------------------
+
+        // 왼쪽/오른쪽의 공백을 제거, 단 가운데 공백은 제거 불가능
+        document.write('korea'.trim()+'</br>');
+
+        // 문자열"hello javaScript"의 길이를 세어 주세요.
+        let hello="hello java Script";
+        console.log(hello.length);
+
+        // 문자열"hello javaScript"의 첫번째 문자와 7번째 문자만 추출
+        console.log(hello.charAt(0));
+        console.log(hello.charAt(6));
+
+        // javaScript만 추출
+        // index번호임을 인식!!
+        console.log(hello.substr(6,11)); // javaScript
+
+        // java라는 문자가 시작되는 위치를 찾아서 출력
+        // indexOf로 문자의 위치를 추출하려 했으나 -1이 출력됨
+        //    -1 -> 문자가 존재하지 않는다. / ( 대소문자 구분함)
+        console.log(hello.indexOf('java'));
+
+        // 문자 포함 여부 확인 < includes() >
+        // 문자의 존재 유무를 true/false로 구분하는 메서드
+        let fun="Programming is fun";
+        console.log(fun.includes("fun")); 
+
+        // 문자열 교체하기 < replace() >
+        let like="I like java";
+        console.log(like.replace("java","javaScript"));
+
+        // 앞뒤 공백 제거
+        let Hello="Hello World";
+        console.log(Hello.trim());
+
+        // 문자열 나누기
+        let fruit="apple,banana,grape";
+        let fruit01=fruit.split(","); // ,를 기준으로 분리해서 fruit01이라는 배열로 들어감
+        for(let i=0;i<fruit01.length;i++){
+            document.write(fruit01[i]+'</br>');
+        }
+
+        // 문자열 이어붙이기
+        console.log(Hello.concat(Hello));
+    </script>
+</body>
+</html>

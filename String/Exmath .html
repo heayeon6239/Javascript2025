@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1. 랜덤 이름 뽑기</title>
+</head>
+<body>
+    <h3>1. 랜덤 이름 뽑기</h3>
+    <button type="button" onclick="ans()">정답 보기</button>
+    <p id="output01"></p>
+    <h3>2. 랜덤 문자열 추출</h3>
+    <button type="button" onclick="ans()">정답 보기</button>
+    <p id="output02"></p>
+    <h3>3. 단어 길이 비교하기</h3>
+    <button type="button" onclick="ans()">정답 보기</button>
+    <p id="output03"></p>
+    <h3>4. 랜덤 비밀번호 생성기 (5글자)</h3>
+    <button type="button" onclick="ans()">정답 보기</button>
+    <p id="output04"></p>
+    <h3>5. 문자열 공백 제거 후 길이 출력</h3>
+    <button type="button" onclick="ans()">정답 보기</button>
+    <p id="output05"></p>
+    <script>
+        // 01.
+        function ans(){
+            let output01=document.getElementById('output01');
+            names=["철수","영희","민수","지영","수현"];
+            let num=Math.floor(Math.random()*names.length);
+            console.log(num);
+            let result=names[num]; // 랜덤 번호 num은 = names[] index번호 
+
+            console.log(result);
+            output01.innerHTML='뽑힌 이름 : '+result;
+
+        }
+
+        // 02.
+        function ans(){
+            let output02=document.getElementById('output02');
+            let str01="JavaScript";
+
+            let num01=Math.floor(Math.random()*str01.length);
+            let result=str01[num01];
+
+
+            output02.innerHTML='뽑힌 글자 : '+result;
+
+        }
+        
+
+        // 03.
+        function ans(){
+            let output03=document.getElementById('output03');
+            let fruit01="apple";
+            let fruit02="watermelon";
+
+            // length 길이 뽑기
+            let length01=fruit01.length;
+            let length02=fruit02.length;
+            console.log(length01, length02);
+            
+            // max 값 구하기
+            let result=Math.max(length01, length02);
+            if(length01===result){
+                output03.innerHTML='더 긴 단어 : '+fruit01+' 길이 : '+result;
+            }else{
+                output03.innerHTML='더 긴 단어 : '+fruit02+' 길이 : '+result;
+            }
+            
+            
+
+        }
+
+
+        // 04.
+        function ans(){
+            let output04=document.getElementById('output04');
+            let str04="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            // 랜덤 번호 만들기 & 소수점 정리
+            let  result='';
+            for(let i=0;i<=5;i++){
+                let pw01=Math.floor(Math.random()*str04.length); // => str04의 index 번호
+                result+=str04[pw01];
+            }
+            // console.log(pw);
+
+            output04.innerHTML=result;
+
+        }
+        
+
+
+        // 05.
+        function ans(){
+            let output05=document.getElementById('output05');
+            let str05="Hello JavaScript";
+
+            str05=str05.trim(); // 공백 제거
+            let strLength=str05.length; // str05의 길이 
+
+            output05.innerHTML='공백 제거 후 : '+str05+', 길이 : '+strLength;
+
+        }
+        
+        
+    </script>
+</body>
+</html>

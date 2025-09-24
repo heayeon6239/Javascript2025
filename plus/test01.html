@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습문제</title>
+</head>
+<body>
+    <h3>1. 1 ~ 50 사이 숫자 중 4의 배수만 더한 합</h3>
+    <p id="output01"></p>
+
+    <h3>2. 입력받은 숫자 n의 약수 출력</h3>
+    <input type="number" id="num02"/>
+    <button type="button" onclick="click01()">확인</button>
+    <p id="output02"></p>
+
+    <h3>3. 1~100 사이 모든 짝수 합과 홀수 합 동시에 구하기</h3>
+    <p id="output03"></p>
+
+    <h3>4. 1~n 사이에서 7의 배수 개수 세기</h3>
+    <input type="number" id="num04"/>
+    <button type="button" onclick="click04()">확인</button>
+    <p id="output04"></p>
+
+    <h3>5. 사용자 입력 숫자가 소수인지 아닌지 판별</h3>
+    <input type="number" id="num05"/>
+    <button type="button" onclick="click05()">확인</button>
+    <p id="output05"></p>
+
+    <script>
+        // 01.
+        let output01=document.getElementById('output01');
+        let result=0;
+        for(let i=1;i<=50;i++){
+            if(i % 4 ==0){
+                result+=i;
+            }
+            output01.innerHTML=result; 
+        }
+        
+
+        // 02.
+        let output02=document.getElementById('output02');
+        
+        
+        function click01(){
+            // function 안에 있어야 버튼이 눌렀을 때 인식이 됨
+            let num02= Number(document.getElementById('num02').value); 
+        
+        for(let i=1;i<=num02;i++){
+            if(num02 % i == 0){
+                
+                console.log(i);
+            }
+            
+           
+        }
+        
+        }
+
+
+        // 03.
+        let output03=document.getElementById('output03');
+        let result01=0;
+        let result02=0;
+
+        for(let i=1;i<=100;i++){
+            if(i % 2 ==0){
+                result01+=i;
+            }else{
+                result02+=i;
+            }
+            output03.innerHTML='짝수의 합 :'+result01+' 홀수의 합 :'+result02;
+        }
+        
+147
+        // 04.
+        let output04=document.getElementById('output04');
+
+        function click04(){
+            let num04=document.getElementById('num04').value;
+            let count=0;
+            let result=0;
+            for(let i=1;i<=num04;i++){
+                if(i % 7 == 0){
+                    count++;
+                    
+                    
+                }
+               
+            }
+             console.log('확인'+count );
+            output04.innerHTML=count;
+        }
+        
+
+        // 05.
+    //     let output05=document.getElementById('output05');
+
+    //    function click05(){
+    //         let num05=document.getElementById('num05').value;
+            
+    //         if(num05 % 1)
+    //     }
+        
+        
+        
+    </script>
+</body>
+</html>
