@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object 연습문제</title>
+</head>
+<body>
+    <h3>2. 쇼핑몰 장바구니 총액 계산</h3>
+    <p id="output"></p>
+   <script>
+        let output=document.getElementById('output');
+
+        let cart=[
+            {id:1,name:'노트북',price:1000000,quantity:1},
+            {id:2,name:'마우스',price:40000,quantity:2},
+            {id:3,name:'키보드',price:50000,quantity:1},
+        ]
+        let result01=''
+        let result02=0;
+        for(let i=0;i<cart.length;i++){
+            // ----------------------------------------- 간단하게 만들기
+            // 각 제품의 총가격
+            result01+=cart[i].name+'금액: '+cart[i].price*cart[i].quantity+'원'+'</br>';
+            // 총가격
+            result02+=cart[i].price*cart[i].quantity;
+            // for문 안에서 각 제품 별 금액 출력할 수도 있음 --------------------
+        }
+        output.innerHTML=result01+'<strong>장바구니 총 금액: '+result02.toLocaleString('ko-kr')+'원';
+   </script>
+</body>
+</html>

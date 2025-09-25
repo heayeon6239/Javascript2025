@@ -1,0 +1,58 @@
+@charset "utf-08";
+*{
+    box-sizing: border-box;
+}
+.wrap{
+    width: 1200px;
+    background-color: aliceblue;
+    margin: 0 auto;
+}
+ ul{
+    list-style: none;
+    width: 700px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+li{
+    background-color: rgb(22, 86, 22);
+    width: 200px;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    
+}
+li img{
+    width: 80px;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    border-radius: 50%;
+    margin: 15px 50px;
+}
+
+.wrap .left{
+    display: flex;
+    width: 1100px;
+    flex-wrap: wrap;
+    border: 1px solid blue;
+}
+.wrap .left .order_list{
+    border: 1px solid red;
+    width: 395px;
+}
+
+
+/* 주문내역 버튼 */
+
+.wrap .left .order_list .section2 .orderbox{
+    float: right;
+    
+    font-size: 20px;
+    /* border: 1px solid red; */
+    /* padding: 10px 10px; */
+    border-bottom: 1px solid green;
+
+}
+.wrap .left .order_list .section2 .orderbox button{
+    width: 100px;
+}
