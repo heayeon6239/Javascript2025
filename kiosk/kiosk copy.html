@@ -67,13 +67,13 @@
               result +=    
             `<li class="liList" onclick="orderClick(${i})">`+
               '<img src="img/hot.png" alt="hot">'+
-                '<span>'+
+                '<span class="menu_type">'+
                   menus[i].type+
                 '</span>'+
-                '<p>'+
+                '<p class="menu_name">'+
                   menus[i].name+
                 '</p>'+
-                '<p>'+
+                '<p class="menu_price">'+
                   menus[i].price+
                 '</p>'+
             '</li>'
@@ -112,13 +112,10 @@
     // menus=[{}]의 오브젝트의 index(menus[indexNum])를 인식하지 못함 
     let index =0;
     let bools = true; // Boolean (데이터 타입 : true, false 논리값만 가질 수 있다.)
-    // let lilist = document.querySelectorAll('.liList');
-    // li의 개수 , 배열로 담아주는 DOM객체
-        // list = [0,1,2,3,4,5,6,7,8,9,10]
-
+    let payresult=0;  
     function orderClick(indexNum){ // onclick( )함수는 호출 X !!
         let result='';
-        let payresult=0;
+        
         let total = 0; 
         // orderList 일차원 배열 -> object 배열로 바꿔주기
         for(let i=0;i<menus.length;i++){
@@ -137,57 +134,34 @@
               <button type="button" class="minus" onclick="minusplus(${index},${false})">+</button>
               <button type="button" class="delete" onclick="remove(${index})">선택취소</button>`+'</br>';
               // order_result ---------------------------------------총 결제 금액
-              total = (orderList[index].quantity * orderList[index].price);
-              payresult += total;
+              // total = (orderList[index].quantity * orderList[index].price);
+              
               console.log(payresult,orderList[index].quantity,index);
           }
           
-          // orderList배열에 주문내역 누적
-          // orderList[index] += result;
-          // orderresult+=result;
           // 주문내역 HTML 화면에 출력
           console.log(result);
-          // orderbox.innerHTML = result;
           index++;
         }
         
-        pay.innerHTML=payresult;
-        
-        
-        
-
-        // 같은 메뉴를 누르면 주문내역에서 수량 증가
+        // 같은 메뉴를 누르면 주문내역에서 수량 증가????????????
         // for(let i=0;i<orderList.length;i++){
         //   if(orderList[i]===result){
         //     menus[indexNum].quantity++;
         //   }
         // }
-        
-        
-        
-        console.log(orderList);
-        // menus[i].quantity++;
-        // sum+=menus[i].quantity*menus[i].price;
-        
     }
-    
-    // 수량이 변경된 주문 내역 정보 호출할 함수 만들기
-    // function changeorder(){
-    //           orderbox.innerHTML +='<p class="order">'+ orderList[index].name+' ['+orderList[index].type+'] '
-    //           +orderList[orderNo].quantity+"개 "+orderList[index].price.toLocaleString('ko-kr')+'원'+"</p>"+
-    //           `<button type="button" class="plus" onclick="minusplus(${index},${true})">-</button>
-    //           <button type="button" class="minus" onclick="minusplus(${index},${false})">+</button>
-    //           <button type="button" class="delete" onclick="remove(${index})">선택취소</button>`;
-    // }
 
+    function deleteresult(){
+      orderbox.innerHTML
+    }
+       
+      
     // 양 늘리고 줄이기
     console.log('index: '+ index)
     console.log('bools: '+ bools)
    let cnt = document.getElementById('menuquan');
     function minusplus(orderNo, bools){
-      // let id = orderList[index].id;
-      // console.log('id'+id);
-        // let menuquan = orderList[orderNo].getElementsByTagName[0];
          if(bools === false){
             if(orderList[orderNo].quantity > 10){
               alert('수량은 10개 까지만 가능합니다.');
@@ -204,39 +178,31 @@
                 return;
               }else{
                  orderList[orderNo].quantity--;
-                //  menuquan.textContent =  orderList[orderNo].quantity;
                 }
          }
          
          console.log(orderList);
-        //  changeorder();
-        //  cafe();
+         totalfunction();
+         console.log('합계'+totalMoney);
     }
-
-    
-
-    // function minus(orderNO){
-    //   if(menus[orderNO].quantity<=0){
-    //     alert('수량은 최소 1개 이상이어야 합니다.');
-    //   }else{
-    //       menus[orderNO].quantity--;
-    //     }
+    // 선택 취소 ---------------------------함수...호출??????????????????????????? 
+    function remove(index){
+        orderList[index].splice(index,1); 
+    }
+    deleteresult();    
+     // 총 합계 함수
+        function totalfunction(){
+          let totalMoney=0;
+          for(let i=0;i<orderList.length;i++){
+            total=(orderList[i].quantity * orderList[i].price);
+          }
+          totalMoney += total;
+          
+        }
+       
     //   // orderClick(index); // 매개변수 함수는 매개변수없이 사용할 수 없음 
     //   // 변경된 정보를 orderClick이라는 함수로 보내줘야하기 때문에 호출!!
-    // }
-
-    // function plus(orderPlus){
-    //   if(menus[orderPlus].quantity>=10){
-    //     alert('수량은 10개 까지만 가능합니다.')
-    //   }else{
-    //     menus[orderPlus].quantity++;
-    //   }
-    //   orderClick(orderPlus);
-    // }
-
-
-    
-        
+  
     </script>
 </body>
 </html>
