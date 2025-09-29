@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo리스트</title>
+    <style>
+        body{
+            background-color: rgb(220, 220, 220);
+        }
+        .todo-container{
+            background-color: white;
+            width: 500px;
+            height: 300px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 5px 10px;
+        }
+        .todo-container h1{
+            color: rgb(0, 149, 255);
+        }
+        .todo-container .input-area input{
+            width: 250px;
+            padding: 10px 5px;
+            border-radius: 5px;
+            background-color:rgb(226, 243, 255);
+            border: none;
+            
+            
+        }
+        .todo-container .input-area input::placeholder{
+            color: white;
+            
+        }
+        .todo-container .input-area input:focus{
+            outline: none;
+        }
+        .todo-container ul{
+            width: 250px;
+            list-style: none;
+            text-align: left;
+            margin-left: 60px;
+        }
+        .todo-container ul li button{
+            color: tomato;
+            background-color: transparent;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+<div class="todo-container">
+    <h1>Todo List</h1>
+    <div class="input-area">
+        <input id="task" type="text" placeholder="할 일 입력" />
+        <button onclick="addTask()">추가</button>
+    </div>
+    <ul id="tasks"></ul>
+</div>
+    <script>
+        // fuction addTask() 
+        // ul에 새 li태그 생성
+        // 생성된 li에 태그에 입력된 텍스트를
+        // ul에 추가
+        // x누르면 삭제 remove();
+      
+        
+      
+        function addTask(){
+            // input 태그의 value!!!!! 없이는 값을 가져올 수 없음
+            // input의 입력값은 모두 문자!!!! 
+            // 숫자로 변환하고 싶다면 => Number(input)
+             // 할 일 입력 . 
+            let task=document.getElementById('task').value.trim();
+            // li 생성
+            let addli=document.createElement('li'); 
+            // ul
+            let tasks=document.getElementById('tasks'); 
+            // ul에 li를 추가
+            tasks.appendChild(addli).textContent=task; 
+            // 생성부터 텍스트 출력까지의 이동경로를 써줘야함 !!!!!!!!!!!!!!!!!
+            // ul -> 생성된 li ->텍스트 노드에 접근
+            // (입력된 텍스트를 인식할 innerHtml,textContent,innertext등으로 입력값을 넣어줌)
+
+            // 삭제버튼 생성 -> 추가 -> 텍스트 노드에 접근
+            // 삭제버튼 생성
+            let delbtn=document.createElement('button');
+            addli.appendChild(delbtn).textContent='X';
+            // < 함수 생성 방법 2가지 >
+            // 01.  addEventListener 가능함!!!!!!!!!!!!!!!
+            // delbtn.addEventListener('click',() => {
+            //     addli.remove();
+            // })
+            // 02. 변수이름.onclick=function(){}(값) - 또 다른 함수 만드는 방법
+            delbtn.onclick=function(){
+                addli.remove();
+            }
+            // 삭제버튼을 addli의 부모 추가
+            addli.appendChild(delbtn);
+            // 기존 ul의 부모 요소 추가
+            document.getElementById('tasks').appendChild(addli);
+            task.value=''; // ??
+        }
+
+    </script>
+</body>
+</html>

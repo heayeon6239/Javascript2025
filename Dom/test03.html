@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 기초문제</title>
+</head>
+<body>
+    <!-- 05. -->
+    <ul>
+        <li class="fruits">사과</li>
+        <li class="fruits">바나나</li>
+        <li class="fruits">체리</li>
+    </ul>
+    <!-- 06. -->
+     <ul id="list"></ul>
+    <!-- 07. -->
+     <ul>
+        <li class="deleteList">삭제될 항목</li>
+        <li>남길 항목</li>
+     </ul>
+     <!-- 08. -->
+      <div id="content"></div>
+
+    <script>
+        // 05.
+        let fruits=document.querySelectorAll('.fruits'); // All은 배열임 [ , , ,]
+            for(let i=0; i<fruits.length;i++){
+                fruits[i].textContent="과일";
+            }
+            
+        
+        // 06.
+        let list=document.getElementById('list');
+        let newLi=document.createElement('li'); // li 태그 생성
+        newLi.textContent = "새항목2";
+        // let text=document.createTextNode('새 항목');
+        // list.appendChild(newLi).appendChild(text);
+        list.appendChild(newLi);
+        
+        // 07.
+        // let list01=document.querySelector('ul li').remove(); // 배열이 아님
+        let list01=document.querySelector('.deleteList').remove(); // 배열이 아님
+
+        // 08.
+        let content=document.getElementById('content');
+        let content01=document.createElement('p'); // p태그 생성
+        // let content02=document.createTextNode('DOM 연습'); // 
+        content.appendChild(content01).innerHTML = 'DOM 연습'
+    </script>
+</body>
+</html>

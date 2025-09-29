@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>키오스크</title>
+    <link rel="stylesheet" href="kiosk.css">
+</head>
+<body>
+    <!-- 전체 -->
+    <div class="wrap">
+        
+        <!-- 메뉴 -->
+        <div class="order_menu">
+            <h2>원하시는 음료를 선택해 주세요</h2>
+            <p>Please choose the drink you want.</p>
+            <div class="section1">
+                <h2>MENU</h2>
+                <!-- 메뉴판 -->
+                <div class="menubox"></div>
+            </div>
+        </div>
+        <!-- 주문 내역 -->
+        <div class="order_list">
+          <div class="section2">
+            <h2>주문내역</h2>
+            <!--  주문 내역 -->
+            <div class="orderbox"></div>
+            <!-- <div class="orderbox2"></div> -->
+            <!-- <em class="menuquan"></em> -->
+
+          </div>
+        </div>
+      
+      
+        <div class="order_result">
+            <!-- 총 주문금액 -->
+          <h2>총 주문금액 : <span class="pay"></span></h2>
+          <span class="line">&boxv;</span>
+          <button class="btn">현금결제</button>
+        </div>
+    </div>
+
+    <script>
+        let menubox=document.querySelector('.menubox'); // 메뉴판
+        let orderbox=document.querySelector('.orderbox'); // 주문내역
+        let orderbox2=document.querySelector('.orderbox2'); // 주문내역
+        let order_result=document.querySelector('.order_result'); 
+        let pay=document.querySelector('.pay'); // 총 주문 금액
+        let menus = [
+        { id: 0, name: '아메리카노', type: 'HOT', price: 1000,quantity:1 },
+        { id:1, name: '아메리카노', type: 'ICE', price: 1300,quantity:1 },
+        { id: 2, name: '바닐라라떼', type: 'HOT', price: 2500,quantity:1 },
+        { id: 3, name: '바닐라라떼', type: 'ICE', price: 2800,quantity:1 },
+        { id: 4, name: '연유라떼', type: 'HOT', price: 2500,quantity:1 },
+        { id: 5, name: '연유라떼', type: 'ICE', price: 2800,quantity:1 },
+        { id: 6, name: '카라멜마끼아또', type: 'HOT', price: 2800,quantity:1 },
+        { id: 7, name: '카라멜마끼아또', type: 'ICE', price: 3000,quantity:1 },
+        { id: 8, name: '카페모카', type: 'HOT', price: 3000,quantity:1 },
+        { id: 9, name: '카페모카', type: 'ICE', price: 3300,quantity:1 },
+        { id: 10, name: '딥카페라테', type: 'HOT', price: 3400,quantity:1 },
+        { id: 11, name: '딥카페라테', type: 'ICE', price: 3700,quantity:1 },
+      ];
+        
+      // 메뉴판 만들기 (ul/li  사용해서)
+      let result='';
+      function cafe(){
+      result+='<ul>' // <ul>도 한번은 출력시켜줘야함 -> for문 밖에 위치 ----------------??? result+= ??????
+        for(let i=0;i<menus.length;i++){
+            
+            if(menus[i].type==='HOT'){ // type == hot
+                result+=
+                `<li onclick="ordermenu(${i})">`+ // onclick() 을 심어서 해당 메뉴를 클릭하면 주문내역으로 이동할 수 있도록
+                '<img src="img/hot.png" alt="hot">'+
+                '<p class="menustype">'+menus[i].type+'</p>'+
+                '<p class="menusname">'+menus[i].name+'</p>'+
+                '<p class="menusprice">'+menus[i].price+'</p>'+
+                '</li>'
+            }else{                     // type == ice
+                result+=
+                `<li onclick="ordermenu(${i})">`+
+                '<img src="img/ice.png" alt="ice">'+
+                '<p class="menustype">'+menus[i].type+'</p>'+
+                '<p class="menusname">'+menus[i].name+'</p>'+
+                '<p class="menusprice">'+menus[i].price+'</p>'+
+                '</li>'
+            }
+        }
+        result+='</ul>'
+        menubox.innerHTML=result; // html에 출력
+    }
+    cafe(); // 호출
+
+    // 주문 내역 빈 배열 만들기
+    let orderArr=[];
+
+    // 주문 내역 / 주문 내역을 빈 배열에 넣어주기
+    result=''; // ----------------??  안넣으면 메뉴판 자체가 출력됨
+    function ordermenu(orederindex){
+        for(let i=0;i<menus.length;i++){
+            if(i===orederindex){
+                orderArr[i]={ // 일차원배열 -> object배열로 바꾸기
+                    id: menus[i].id,
+                    name: menus[i].name,
+                    type: menus[i].type,
+                    price: menus[i].price,
+                    quantity: menus[i].quantity,
+                }
+
+                
+                // result+=
+                // '<span class="menuname">'+orderArr[i].name+'</span>'+
+                // ' ['+'<strong class="menutype">'+orderArr[i].type+'</strong>'+'] '
+                // +'<em>'+orderArr[i].quantity+'</em>'+'개'+ 
+                // `<button type="button" class="plus" onclick="plus(${i})">+</button>
+                // <button type="button" class="minus" onclick="minus(${i})">-</button>
+                // <button type="button" class="delete" onclick="remove(${i})">선택취소</button>`+'</br>'
+            }
+            orderbox.innerHTML=result;
+        }
+    }
+
+    // 변경된 주문내역 저장 함수 생성
+    function renewOrder(){
+        orderbox.innerHTML='' // 기존 주문내역 초기화
+
+        for(let i=0;i<orderArr.length;i++){
+            orderbox.innerHTML+=
+                `<span class="menuname">${orderArr[i].name}</span>`
+                `[<strong class="menutype">${orderArr[i].type}</strong>]`
+                `<em class="menuquan">${orderArr[i].quantity}</em>개`
+                `<span class="menuprice">${orderArr[i].price * orderArr[i].quantity}<span>원</br>`
+                `<button type="button" class="plus" onclick="plus(${i})">+</button>
+                <button type="button" class="minus" onclick="minus(${i})">-</button>
+                <button type="button" class="delete" onclick="remove(${i})">선택취소</button>`+'</br>'
+        }
+        
+
+    }
+    
+
+    // 총 주문 내역 - plus
+    let menuquan=document.querySelector('.menuquan');
+    function plus(quantityindex){
+        if(orderArr[quantityindex].quantity>=10){
+            alert('수량은 10개 까지만 가능합니다.');s
+        }else{
+            orderArr[quantityindex].quantity++;
+            
+        }
+        menuquan.innerHTML=orderArr[quantityindex].quantity;
+        // result= --------------------> 수량은 증가는 되는데 이중 출력이 됨
+                // '<span class="menuname">'+orderArr[quantityindex].name+'</span>'+ // 이름
+                // ' ['+'<strong class="menutype">'+orderArr[quantityindex].type+'</strong>'+'] '+ // 타입
+                // '<em class="menuquan">'+orderArr[quantityindex].quantity+'</em>'+'개'+  // 수량
+                // `<button type="button" class="plus" onclick="plus(${quantityindex})">+</button> 
+                // <button type="button" class="minus" onclick="minus(${quantityindex})">-</button>
+                // <button type="button" class="delete" onclick="remove(${quantityindex})">선택취소</button>`+'</br>'
+        // orderbox2.innerHTML=result;
+        // orderbox.innerHTML+=orderArr[quantityindex].quantity;
+    }
+    </script>
+</body>
+</html>

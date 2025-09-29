@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kiosk Cafe</title>
+    <link rel="stylesheet" href="kiosk.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="left">
+        <!-- ordermenu -->
+        <div class="order_menu">
+          <h2>원하시는 음료를 선택해 주세요</h2>
+          <p>Please choose the drink you want.</p>
+          <div class="section1">
+            <h2>MENU</h2>
+            <div class="menubox"></div>
+          </div>
+        </div>
+      </div>
+      <!-- 주문 내역 -->
+      <div class="right">
+        <div class="order_list">
+          <div class="section2">
+            <h2>주문내역</h2>
+            <div class="orderbox"></div>
+          </div>
+        </div>
+
+        <div class="order_result">
+          <h2>총 주문금액 : <span class="pay"></span></h2>
+          <span class="line">&boxv;</span>
+          <button class="btn">현금결제</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let menubox = document.querySelector('.menubox');
+      let orderbox = document.querySelector('.orderbox');
+      let order_result = document.querySelector('.order_result');
+      let pay = document.querySelector('.pay');
+      let menus = [
+        { id: 0, name: '아메리카노', type: 'HOT', price: 1000, quantity: 1 },
+        { id: 1, name: '아메리카노', type: 'ICE', price: 1300, quantity: 1 },
+        { id: 2, name: '바닐라라떼', type: 'HOT', price: 2500, quantity: 1 },
+        { id: 3, name: '바닐라라떼', type: 'ICE', price: 2800, quantity: 1 },
+        { id: 4, name: '연유라떼', type: 'HOT', price: 2500, quantity: 1 },
+        { id: 5, name: '연유라떼', type: 'ICE', price: 2800, quantity: 1 },
+        {
+          id: 6,
+          name: '카라멜마끼아또',
+          type: 'HOT',
+          price: 2800,
+          quantity: 1,
+        },
+        {
+          id: 7,
+          name: '카라멜마끼아또',
+          type: 'ICE',
+          price: 3000,
+          quantity: 1,
+        },
+        { id: 8, name: '카페모카', type: 'HOT', price: 3000, quantity: 1 },
+        { id: 9, name: '카페모카', type: 'ICE', price: 3300, quantity: 1 },
+        { id: 10, name: '딥카페라테', type: 'HOT', price: 3400, quantity: 1 },
+        { id: 11, name: '딥카페라테', type: 'ICE', price: 3700, quantity: 1 },
+      ];
+
+      // menu 출력
+      function cafe() {
+        let result = '';
+        result += '<ul>'; // ------------------------!!!!!!!!!!!!!
+        for (let i = 0; i < menus.length; i++) {
+          if (menus[i].type == 'HOT') {
+            result += `<li class="liList" onclick="orderClick(${i})">
+                        <img src="${
+                          menus[i].type === 'HOT'
+                            ? 'img/hot.png'
+                            : 'img/ice.png'
+                        }" alt="${menus[i].type}">
+                        <span class="menu_type">${menus[i].type}</span>
+                        <p class="menu_name">${menus[i].name}</p>
+                        <p class="menu_price">${menus[i].price}</p>
+                    </li>`;
+          } else {
+            result += `<li class="liList" onclick="orderClick(${i})">
+                        <img src="${
+                          menus[i].type === 'HOT'
+                            ? 'img/ice.png'
+                            : 'img/ice.png'
+                        }" alt="${menus[i].type}">
+                        <span class="menu_type">${menus[i].type}</span>
+                        <p class="menu_name">${menus[i].name}</p>
+                        <p class="menu_price">${menus[i].price}</p>
+                    </li>`;
+          }
+        }
+        result += '</ul>';
+        menubox.innerHTML = result;
+      }
+      cafe();
+
+      // orderbox ---------------------------------------------------------------------------------------------
+
+      // 주문내역을 담을 빈 배열 생성
+      let orderList = [];
+      // menus=[{}] => object배열인데 orderList=[]는 일차원배열이라 result(주문내역)를 orderList=[]배열에 넣을 때,
+      // menus=[{}]의 오브젝트의 index(menus[indexNum])를 인식하지 못함
+      let index = 0;
+      let bools = true; // Boolean (데이터 타입 : true, false 논리값만 가질 수 있다.)
+      let payresult = 0;
+
+      function orderClick(indexNum) {
+        // onclick( )함수는 호출 X !!
+        let result = '';
+        let total = 0;
+        // orderList 일차원 배열 -> object 배열로 바꿔주기
+        for (let i = 0; i < menus.length; i++) {
+          if (i === indexNum) {
+            orderList.push({
+              id: menus[i].id,
+              name: menus[i].name,
+              type: menus[i].type,
+              quantity: menus[i].quantity,
+              price: menus[i].price,
+            });
+            orderClickList();
+            // index++;
+          }
+        }
+        totalfunction();
+      }
+      // 주문한 상품 주문내역 출력하는 함수
+      // 삭제한 후 다시 orderbox 리셋하고 그려주기 위해서
+      // 위의 orderClick(indexNum) 함수를 => orderClick(indexNum)과 orderClickList()함수로 분할 함
+      function orderClickList() {
+        orderbox.innerHTML = ''; // 기존 주문내역 초기화
+
+        for (let i = 0; i < orderList.length; i++) {
+          orderbox.innerHTML += `
+            <span class="menuname">${orderList[i].name}</span>
+            <strong class="menutype">[${orderList[i].type}]</strong>
+            <span class="menuquan" spanindex="${i}">${orderList[i].quantity}</span>
+            <em class="menuprice" emindex="${i}">${(orderList[i].price * orderList[i].quantity).toLocaleString('ko-kr')}</em>원<br>
+            <button type="button" class="plus" onclick="minusplus(${i}, true)">-</button>
+            <button type="button" class="minus" onclick="minusplus(${i}, false)">+</button>
+            <button type="button" class="delete" onclick="remove(${i})">선택취소</button><br>
+          `;
+        }
+      }
+
+      // 양 늘리고 줄이기
+      function minusplus(orderNo, bools) {
+        let menuquan = document.querySelector(
+          `.menuquan[spanindex="${orderNo}"]`
+        );
+        let menuprice = document.querySelector(
+          `.menuprice[emindex="${orderNo}"]`
+        );
+
+        if (bools === false) {
+          if (orderList[orderNo].quantity > 10) {
+            alert('수량은 10개 까지만 가능합니다.');
+            return;
+          } else {
+            orderList[orderNo].quantity++;
+            menuquan.textContent = orderList[orderNo].quantity;
+            menuprice.textContent =
+              orderList[orderNo].quantity * orderList[orderNo].price;
+            console.log('개수' + orderList[orderNo].quantity++);
+          }
+        } else {
+          if (orderList[orderNo].quantity <= 0) {
+            alert('수량은 최소 1개 이상이어야 합니다.');
+            return;
+          } else {
+            orderList[orderNo].quantity--;
+            menuquan.textContent = orderList[orderNo].quantity;
+            menuprice.textContent =
+              orderList[orderNo].quantity * orderList[orderNo].price;
+          }
+        }
+        totalfunction();
+      }
+
+      // 선택 취소 ---------------------------함수...호출???????????????????????????
+      function remove(orderIndex) {
+        orderList.splice(orderIndex, 1);
+        orderClickList();
+        totalfunction();
+      }
+
+      // 총 합계 함수
+      function totalfunction() {
+        let totalMoney = 0;
+        for (let i = 0; i < orderList.length; i++) {
+          totalMoney += orderList[i].quantity * orderList[i].price;
+        }
+        pay.textContent = totalMoney.toLocaleString('ko-kr');
+        console.log('합계' + totalMoney);
+      }
+
+      //   // orderClick(index); // 매개변수 함수는 매개변수없이 사용할 수 없음
+      //   // 변경된 정보를 orderClick이라는 함수로 보내줘야하기 때문에 호출!!
+    </script>
+  </body>
+</html>

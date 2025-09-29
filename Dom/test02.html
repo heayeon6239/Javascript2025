@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 기초문제</title>
+</head>
+<body>
+    <!-- 01. -->
+    <p id="text">안녕하세요</p>
+    <!-- 02. -->
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <!-- 03. -->
+    <span class="span">첫 번째 문장</span>
+    <span class="span">두 번째 문장</span>
+    <!-- 04. -->
+     <ul>
+        <li>사과</li>
+        <li>바나나</li>
+        <li>체리</li>
+     </ul>
+     <!-- 정리 -->
+     <p class="p2">one</p>
+     <p class="p2">two</p>
+    
+    <script>
+        // 01.
+        let text=document.getElementById('text');
+        text.textContent="DOM 실습 중급";
+        console.log(text);
+
+        // 02.
+        // forEach()
+        
+        // 배열 생성 Array.from()
+        // box를 배열로 생성 --------------????????????????
+        let box=document.getElementsByClassName('box'); // 배열처럼 보이지만 [], 사실 배열이 아님
+        let box2=document.querySelectorAll('.box');
+        let arr = Array.from(box2);
+        // let arr2=[box]
+        // querySelector()=> 배열로 만들기 불가능
+        // querySelectorAll()=> 이미 배열이기 때문에 배열을 만들 필요가 없음!!
+        // forEach(value(box항목),index(인덱스),array(배열전체))
+        arr.forEach((item,index)=>{
+            item.style.backgroundColor="yellow";
+            item.style.width="100px";
+        })
+        // for(let i=0;i<box.length;i++){
+            
+        // }
+        
+
+        // 03.
+        let span=document.getElementsByTagName('span');
+        let span2=document.querySelectorAll('.span')[1];
+        span2.style.color="red";
+        // let arr01=Array.from(span);
+        // arr01.forEach((span,)=>{
+        //     span.style.color="blue";
+        // })
+        
+
+        // 04.
+        // 선택자 이름(id, class 등)이 존재하지 않을 경우 
+        // 부모 자식의 태그명을 정확하게 입력해야함
+        let firstLi=document.querySelector('ul li'); // 배열이 아니라 어차피 첫번째꺼밖에 인식 못함
+            firstLi.textContent='포도';
+
+
+        let p2=document.querySelectorAll('.p2')[0];
+        console.log(`p2 : ${p2}`); // p2 : [object HTMLParagraphElement] 
+        // forEach 버전
+        // p2.forEach((item,i)=>{
+        //     if(i===0){
+        //         p2[i].style.color="blue";
+        //     }
+        // })
+        // 그냥 [0]을 바로 박은 버전
+        p2.style.color="blue";
+
+
+        // ----------------------------- 정리
+        // <p class="p2">one</p>
+        // <p class="p2">two</p>
+
+        // 01- getElementById() => 배열과 유사함
+        // forEach()문은 HTMLCollection을 가지고 있지 않음
+        // Array.from()이용하여 배열 생성 가능
+        let p10=document.getElementsByTagName('p');
+        let arr10=Array.from(p10);
+        console.log('p10'+p10); //p2 : [object HTMLParagraphElement]
+        arr10.forEach(item=>{
+            item.style.color='red';
+        });
+        // for문은 index로 루프를 돌리기 때문에 허용
+        for(let i=0;i<p10.length;i++){
+            p10[i].style.color='blue';
+        }
+
+        // 02- getElementsByClassName => p11[object HTMLCollection]
+        // forEach() 적용 안됨
+        let p11= document.getElementsByClassName('p2');
+        console.log('p11'+p11);
+        // for문은 가능함 
+        // 인덱스로 접근하고, length속성을 가지기 때문에 접근 가능
+        for(let i=0;i<p11.length;i++){
+            p11[i].style.fontSize="30px";
+            p11[i].style.color="green";
+        }
+
+        // querySelector() =>  p12[object NodeList] / Node-> 태그 하나 하나
+        let p12=document.querySelectorAll('.p2');
+        console.log('p12'+p12);
+        // forEach 버전
+        // p12.forEach((item,i)=>{
+        //     item.style.color='red';
+        // })
+        // for문 버전
+        for(let i=0;i<p12.length;i++){
+            p12[i].style.color='blue';
+        }
+    </script>
+</body>
+</html>
