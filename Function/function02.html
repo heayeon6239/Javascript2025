@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수 문제</title>
+</head>
+<body>
+    <!-- 03번 -->
+     <button id="btn">버튼</button>
+     <!-- 06번 -->
+     <button id="btn06">버튼</button>
+     <!-- 07번 -->
+     <button id="toggleBtn">이미지 토글</button>
+    <img id="myImg" src="img/pic-2.jpg" style="display: block" />
+
+    <!-- 08번 -->
+    <p id="text">색상이 바뀝니다</p>
+     <button id="colorBtn">색상 변경</button>
+
+    <!-- 09번 -->
+    <input id="num1" type="number"> +
+    <input id="num2" type="number">
+    <button id="sumBtn">계산</button>
+    <div id="result09"></div>
+
+    <!-- 10번 -->
+     <input id="inputBox" type="text" placeholder="입력해보세요">
+
+    <script>
+    // 2 ~ 6번
+
+    // 02번
+    let getDiscountPrice=(price,rate)=>{
+        console.log(price,rate);
+    }
+    getDiscountPrice(10000,0.1);
+
+    // 03번
+    let btn=document.getElementById('btn');
+    let result=0;
+    btn.addEventListener('click',()=>{
+        result++;
+        console.log(result);
+    })
+
+    // 04번
+    let result04=0;
+    let getTotal=(cart)=>{
+        for(let i=0;i<cart.length;i++){
+            result04+=cart[i]; // cart[i] -> cart에서의 [i]인덱스 / i -> 인덱스 번호
+            // console.log(result04);
+            
+        }
+        return result04;
+    }
+    console.log(getTotal([1000,2000,3000]));
+
+    // 05번
+    // let validatePassword = (a) => a.length >= 8
+    let validatePassword=(a)=>{
+        if(a.length>=8){
+           return true; // true,false -> 논리값이기 때문에 '' 붙이면 안됨!!!
+        }else{
+           return false;
+        }
+    }
+    console.log(validatePassword("1234")); // flase 으로 반환
+    console.log(validatePassword("12345678")); // true 으로 반환
+    // 문자도 배열!!!! string -> 오브젝트 배열
+
+    // 06번
+    let btn06=document.getElementById('btn06');
+    btn06.addEventListener('click',()=>{
+        // new Date() 생성
+        let today06=new Date();
+        console.log(today06.toLocaleString());
+        // 2025. 9. 30. 오후 3:16:36
+        // console.log(today06.toLocaleDateString());
+        // 2025. 9. 30.
+        
+    })
+
+
+    // 07번
+    let toggleBtn=document.getElementById('toggleBtn'); //  DOM 접근
+    let myImg=document.getElementById('myImg');
+    toggleBtn.addEventListener('click',()=>{
+        if(myImg.style.display==='none'){
+            myImg.style.display='block';
+        }else{
+            myImg.style.display='none';
+        }
+    })
+    
+
+    // 08번
+    const colors = ['red', 'blue', 'green'];
+    let text=document.getElementById('text');
+    let colorBtn=document.getElementById('colorBtn');
+    let index=0;
+
+    colorBtn.addEventListener('click',()=>{
+        switch(true){
+            case index===0:
+                text.style.color=colors[0];
+            break;
+            case index===1:
+                text.style.color=colors[1];
+            break;
+            case index===2:
+                text.style.color=colors[2];
+            break;
+            default:
+                break;
+        }
+        index++;
+        if(index===3){
+            index=0;
+        }
+        // for(let i=0;i<colors.length;i++){
+        //     text.style.color=colors[i];
+        //     console.log(text);
+        // }
+    })
+
+    // 09번
+
+    
+    let sumBtn=document.getElementById('sumBtn');
+    let result09=document.getElementById('result09');
+   console.log(num1+num2);
+    sumBtn.addEventListener('click',()=>{
+    let num1=Number(document.getElementById('num1').value);
+    let num2=Number(document.getElementById('num2').value);
+        console.log(typeof num1);
+        result09.textContent = num1 + num2; 
+        // innerHTML,textContent로 텍스트 노드까지 접근해야함!!!!
+        console.log(result09);
+    })
+
+    // 10번
+    let inputBox=document.getElementById('inputBox');
+    inputBox.addEventListener('keyup',()=>{
+        console.log('현재 입력: '+inputBox.value); // function 안에 둬야함!!!!!!
+    })
+
+    
+    </script>
+</body>
+</html>

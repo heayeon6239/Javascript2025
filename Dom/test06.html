@@ -10,10 +10,21 @@
 </head>
 <body>
     <!-- 9 ~ 12번 -->
+    <!-- 9번 -->
     <input type="text" id="userInput" value="안녕">
     <button id="btn">확인</button>
+    <!-- 10번 -->
+    <input type="text" id="userInput">
     <script>
-       let btn=
+    // 09번
+       let btn=document.getElementById('btn');
+       let input=document.getElementById('userInput');
+       btn.addEventListener('click',()=>{
+        console.log(input.value);
+       })
+    // 10번
+    let userInput=document.getElementById('userInput');
+    userInput.textContent='DOM 실습';
     </script>
 </body>
 </html>

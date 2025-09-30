@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습문제</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <!-- 17 ~ 20번 -->
+    <!-- 17번 -->
+    <div class="parent">
+      <p>자식 요소</p>
+    </div>
+    <!-- 18번 -->
+    <!-- <ul id="list">
+      <li>1</li>
+      <li>2</li>
+    </ul> -->
+    <!-- 19번 -->
+    <p>첫 번째</p>
+    <p>두 번째</p>
+    <p>세 번째</p>
+    <!-- 20번 -->
+    <ul id="list20">
+      <li>1</li>
+      <li>2</li>
+    </ul>
+
+
+    <script>
+    // 17번
+      let p17=document.querySelector('.parent p') // p의 부모를 타주는 것이 정확함
+      // 부모 요소를 찾는 메서드 : parentElement
+      p17.parentElement.style.color='pink'; // p의 부모요소가 pink로 바뀜
+    // 18번
+      let list=document.getElementById('list');
+      // 자식 요소를 찾는 메서드 : children[0] (뒤에 []몇번째 자식인지 적어야함)
+      list.children[0].textContent="첫번째";
+    // 19번
+    // <p>두번째</p> p태그 요소노드에 접근했음 (getElen~tagname도 가능하지만 배열을 만들어야함)
+      let second=document.querySelectorAll('p');[0]// 두번째 요소
+      // 이전 요소 찾는 메서드 : previousElementSibling
+      second.previousElementSibling.textContent="이전";
+    // 20번
+      let list20=document.getElementById('list20');
+      // li 생성 -> 텍스트 노드 0 입력
+      let newLi=document.createElement('li');
+      newLi.textContent='0';
+      // ul에 삽입 / 삽입하는 메서드: insertbefore
+      // firstChild : 첫번째 자식으로 / lastChild : 마지막 자식
+      list20.insertBefore(newLi.firstChild);
+      
+      
+    </script>
+</body>
+</html>

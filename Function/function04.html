@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수 문제</title>
+</head>
+<body>
+    <div id="container">
+         <img id="img" src="img/girl.png" >
+    </div>
+
+
+    <script>
+        let container=document.getElementById('container');
+        let img=document.getElementById('img');
+
+        container.addEventListener('mouseover',()=>{
+            img.setAttribute("src","img/boy.png");
+        })
+        container.addEventListener('mouseout',()=>{
+            img.setAttribute("src","img/girl.png");
+        })
+    </script>
+</body>
+</html>
