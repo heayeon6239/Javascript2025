@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메가박스</title>
+    <link rel="styleSheet" href="megabox.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+</head>
+<body>
+    <div class="container">
+        
+        <!-- header ----------------------------------------------------------- -->
+        <header>
+            <!-- header01 --------->
+            <div class="header01">
+                <!-- header01 왼쪽 (멤버쉽, 고객센터 ....) -->
+                <ul class="header_left">
+                    <li>
+                        <a href="#" class="header_leftmenu">VIP LOUNGE</a>
+                        <a href="#" class="header_leftmenu">멤버쉽</a>
+                        <a href="#" class="header_leftmenu">고객센터</a>
+                    </li>
+                </ul>
+                <!-- header01 오른쪽 (로그아웃, 빠른예매) -->
+                <ul class="header_right">
+                    <li>
+                        <a href="#" class="header_rightmenu">로그아웃</a>
+                        <a href="#" class="header_rightmenu">빠른예매</a>
+                    </li>
+                </ul>
+            </div>
+
+
+            <!-- header02 --------->
+            <div class="header02">
+                <!-- header02 왼쪽 (리스트?,검색) -->
+                <div class="header02_left">
+                    <!-- list 아이콘 -->
+                    <i class="fa-solid fa-list"></i>
+                    <!-- 돋보기 아이콘 -->
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <!-- header02 미들 (메뉴바) -->
+                <div class="header02_middle">
+                    <ul class="menu">
+                        <li>
+                            <p class="menu01">영화</p>
+                            <p class="menu02">예매</p>
+                            <p class="menu03">극장</p>
+                            <p class="menu04">이벤트</p>
+                            <p class="menu05">스토어</p>
+                            <p class="menu06">혜택</p>
+                        </li>
+                    </ul>
+                </div>
+                <!-- header02 오른쪽 (일정,마이페이지) -->
+                <div class="header02_right">
+                    <!-- 일정 아이콘 -->
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <!-- 마이페이지 아이콘 -->
+                    <i class="fa-regular fa-user"></i>
+                </div>
+            </div>
+
+
+             <!-- header03 --------->
+            <div class="header03">
+                <div class="header03_all">
+                    <ul class="header03_left">
+                        <li>
+                            <!-- 홈 아이콘 -->
+                            <i class="fa-solid fa-house"></i>
+                            <a href="#">예매</a>
+                            <a href="#">빠른예매</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+                
+        </header>
+
+
+        <!-- main 중간 파트-------------------------------------------------- --->
+        <main>
+            <h2>빠른 예매</h2>
+            <section>
+                
+                <div class="left">
+                    
+                    <ul>
+                        <li class="first_li">
+                            <span id="people_num">관람인원선택</span>
+                            <button type="button" id="reset_btn">초기화</button>
+                        </li>
+                        <li class="people_type">
+                            <div class="adult">
+                                <span class="type">성인</span>
+                                <button class="minus">-</button>
+                                <span class="p_num">0</span>
+                                <button class="plus">+</button>
+                            </div>
+                            <div class="adult">
+                                <span class="type">청소년</span>
+                                <button class="minus">-</button>
+                                <span class="p_num">0</span>
+                                <button class="plus">+</button>
+                            </div>
+                            <div class="adult">
+                                <span class="type">경로</span>
+                                <button class="minus">-</button>
+                                <span class="p_num">0</span>
+                                <button class="plus">+</button>
+                            </div>
+                            <div class="adult">
+                                <span class="type">우대</span>
+                                <button class="minus">-</button>
+                                <span class="p_num">0</span>
+                                <button class="plus">+</button>
+                            </div>
+                        </li>
+                    </ul>
+                     <!-- 좌석 테이블 -->
+                     <div class="table_container">
+                        <div class="screen"><h3>SCREEN</h3></div>
+                        <div class="seat_table">
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <!-- 영화 제목-->
+                    <div class="movie_title">
+                        <ul>
+                            <li><span id="age">15 </span><span id="title">어쩔수가없다</span></li>
+                            <li><span class="blur">2D</span></li>
+                        </ul>
+                        
+                    </div>
+                    
+                    <!-- 영화 정보 -->
+                    <div class="movie_info">
+                        <!-- 영화관 위치, 관, 시간 등 -->
+                         <ul>
+                            <li><span class="blur">강동</span></li>
+                            <li><span class="blur">3관</span></li>
+                            <li><span class="blur">2025.10.04(토)</span></li>
+                            <li><span class="time">17:05 ~ 19:33</span><button class="dropdown">∨</button></li>
+                        </ul>
+                        <div class="movie_detail"></div>
+                        <!-- 영화 포스트 -->
+                        <div class="movie_img">
+                            <img src="img/movieposter.jpg" alt="movieposter">
+                        </div>
+                    </div>
+                    <!-- 영화 좌석 -->
+                     <div class="seat_info">
+                        <!-- 좌석 상태, 정보 -->
+                        <div class="seat_condition">
+                            <ul>
+                                <li>
+                                    <button class="seat_btn"></button>
+                                    <span class="blur">선택</span>
+                                </li>
+                                <li>
+                                    <button class="seat_btn"></button>
+                                    <span class="blur">예매완료</span>
+                                </li>
+                                <li><button class="seat_btn"></button>
+                                    <span class="blur">선택불가</span>
+                                </li>
+                                <li><button class="seat_btn"></button>
+                                    <span class="blur">일반</span>
+                                </li>
+                                <li><button class="seat_btn"></button>
+                                    <span class="blur">장애인석</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- 선택 좌석 표시 -->
+                        <div class="seat_select">
+                            <span class="blur">선택좌석</span>
+                            <div class="seat_array"></div>
+                        </div>
+                     </div>
+                     <!-- 영화 가격 -->
+                     <div class="select_result">
+                        <ul>
+                            <li><span class="select_list">나중에 수정스</span></li>
+                            <li class="price"><span class="final">최종결제금액</span><span class="total_price"></span><span>원</span></li>
+                        </ul>
+                     </div>  
+                     <!-- 버튼 -->
+                     <div class="btn">
+                        <!-- 이전 버튼 -->
+                        <button type="button" class="before_btn">이전</button>
+                        <button type="button" class="after_btn">이후</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+
+        </footer>
+    </div>
+
+    <script>
+        // 인원수 조절 기능
+        // DOM접근
+        let minus=document.querySelectorAll('.minus'); // ALL은 배열
+        let plus=document.querySelectorAll('.plus');
+        let adult=document.querySelectorAll('.adult');
+
+
+        // 초기화 버튼
+        reset_btn.addEventListener('click',()=>{
+            let reset_btn=document.querySelector('reset_btn');
+        for(let i=0;i<p_num.length;i++){
+            p_num[i].textContent=0;
+        }
+            
+        })
+        // for문 돌려서 인원수 증가, 감소 클릭 기능 넣기
+        // - 버튼 기능
+        for(let i=0;i<minus.length;i++){
+            minus[i].addEventListener('click',()=>{
+                if(p_num[i].textContent<1){
+                    // 모달창 출력
+                }else{
+                    p_num[i].textContent--;
+                }
+            })
+        }
+        // + 버튼 기능
+        let result=0;
+        let p_num= document.querySelectorAll('.p_num');
+        // for(let i=0;i<p_num.length;i++){
+        //     console.log(p_num[i].textContent);
+        // }
+        for(let i=0;i<plus.length;i++){
+            plus[i].addEventListener('click',function(){
+                if(p_num[i].textContent>8){
+                    // 모달창 출력
+                }else{
+                    p_num[i].textContent++;
+                    console.log(p_num[i])
+                }
+            })
+            
+            
+        }
+
+         // ---------------------- *** <left> 좌석 테이블 *** -----------------------------------------------------------
+
+                let tableLeft = document.getElementsByClassName('seat_table')[0];
+
+            // 알파벳 배열 (10X1)
+                let abcArray = ['A','B','C','D','E','F','G','H',"I",'J'];
+                console.log(abcArray);
+                console.log(abcArray.length); // 10
+
+            // 좌석 배열 (10X10)
+                let seatArray = Array.from(Array(10),()=> new Array(10));
+                
+                for(let i=0; i < seatArray.length; i++){
+                    for(let j=0; j<seatArray[i].length; j++){
+                        seatArray[i][j]=j+1;
+                    }
+                }
+                console.log(seatArray);
+                console.log(seatArray.length); // 10
+
+            // 두 배열 테이블로 합치기
+                let seatTable = "<table>";
+                for(let i=0; i<seatArray.length;i++){
+                    seatTable += "<tr>" + "<td class='abc_row'>" + abcArray[i] + "</td>";
+                    for(let j=0; j<seatArray[i].length; j++){
+                        seatTable += "<td class='seat_row'>" + seatArray[i][j] + "</td>";
+                    }
+                    seatTable += "</tr>";
+                }
+                seatTable += "</table>";
+                console.log(seatTable);
+                    
+                tableLeft.innerHTML = seatTable;
+
+        // ---------------------- *** <right> 선택좌석 배열 *** -----------------------------------
+            let tableRight = document.getElementsByClassName('seat_array')[0];
+            let selectArray = Array.from(Array(4),()=> new Array(2).fill('-'));
+            let selectTable= "<table>";
+            for(let i=0; i<selectArray.length;i++){
+                    selectTable += "<tr>";
+                    for(let j=0; j<selectArray[i].length; j++){
+                        selectTable += "<td class='selectTable'>" + selectArray[i][j] + "</td>";
+                    }
+                    selectTable += "</tr>";
+                }
+            selectTable += "</table>";
+            console.log(selectTable);
+
+            tableRight.innerHTML = selectTable;
+
+        // ---------------------------------------------------------------------------------
+
+        // ---------------------- *** <left> to <right> 예매 내역 보내기 함수 *** -----------------------------------
+                // 변수, 가격 배열, 결제목록(빈배열) 만들기
+                let counter = 0;
+                let priceInfo = [
+                    { id:0, type: '성인', price: 13000, quantity: 0},
+                    { id:1, type: '청소년', price: 10000, quantity: 0},
+                    { id:2, type: '경로', price: 7000, quantity: 0},
+                    { id:3, type: '우대', price: 5000, quantity: 0}
+                ]
+                let selectListArr = [];
+
+
+                // 선택항목 결제목록 배열에 넣기
+                function insertSelect(selectIndex){
+                    selectListArr.push({
+                    id: priceInfo[selectIndex].id,
+                    type: priceInfo[selectIndex].type,
+                    price: priceInfo[selectIndex].price,
+                    quantity: priceInfo[selectIndex].quantity,
+                    });
+                    SelectlistDisplay();
+                    totalPay();
+                }
+        // ---------------------------------------------------------------------------------
+        // ---------------------------------------------------------------------------------
+        // ---------------------------------------------------------------------------------
+        
+    </script>
+</body>
+</html>
