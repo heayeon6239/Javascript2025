@@ -116,6 +116,9 @@ button{
     z-index: 20;
     
 }
+.container .header02_menu .menu_hidden{
+    display: none;
+}
 
 /* header03 */
 
@@ -283,258 +286,7 @@ main h2{
     width: 100%;
     justify-content: flex-end;
 }
-/* 수정함 */
-.container section .left .table_container{
-    border: 1px solid lightgray;
-    border-top: none;
-    width: 770px;
-    height: 445px;
-    padding-bottom: 50px;
-}
-.container section .left .table_container .screen h3{
-    /* border: 1px solid blue; */
-    margin-top: 0;
-    padding-top: 40px;
-    text-align: center;
-    color: #444;
-    font-weight: 900;
-}
-.container section .left .table_container .seat_table{
-    width: 770px;
-    padding-left: 190px;
-}
-.abc_row{
-    color:#333;
-    text-align: left;
-    width: 70px;
-    height: 20px;
-    font-size: 18px;
-    text-align: center;
-    font-weight: bold;
-    }
-.basic{
-    color:#fff; 
-    width: 25px;
-    height: 20px;
-    text-align: center;
-    font-size: 14px;
-    background-color:rgb(116, 116, 116);
-    cursor: pointer;
-}
-.cantselect{
-    color:#fff; 
-    width: 25px;
-    height: 20px;
-    text-align: center;
-    font-size: 14px;
-    background-color:rgb(204, 204, 204);
-}
-.selected{
-    color:#fff; 
-    width: 25px;
-    height: 20px;
-    text-align: center;
-    font-size: 14px;
-    background-color:rgb(80, 50, 150);
-}
-.right{
-    margin-left: 10px;
-    width: 310px;
-    height: 560px;
-    background-color: rgba(51,51,51);
-    border-radius: 10px;
-    color: #fff;
-    padding: 20px;    
-}
-.movie_title{
-    margin-bottom: 10px;
-}
-.movie_title ul li #age{
-    display: inline-block;
-    background-color: rgb(221,116,48);
-    border: none;
-    border-radius: 5px;
-    padding: 0;
-    margin: 0;
-    width: 22px;
-    height: 22px;
-    font-weight: 600;
-    text-align: center;
-    line-height: 22px;
-}
-.movie_title ul li #title{
-    font-size: 17px;
-    margin-left: 10px;
-}
-.movie_title ul li > .blur{
-    margin-left: 34px;    
-}
-.movie_info{
-    display: flex;
-    border-top: 1px solid rgb(83, 83, 83);
-    border-bottom: 1px solid rgb(83, 83, 83);
-    padding: 10px 0;   
-}
-.blur{
-    font-weight: 300;
-    color: #ffffffb4;
-}
-.time{
-    font-size: 12px;
-}
-.dropdown{
-    display: inline;
-    background-color: inherit;
-    border: 1px solid rgb(83, 83, 83);
-    border-radius: 50%;
-    font-size: 8px;
-    color: #fff;
-    padding: 2px 4px;
-    text-align: center;
-    margin-left: 12px;
-    cursor: pointer;
-}
-.movie_img{
-    padding-left: 60px;
-}
-.movie_img img{
-    width: 80px;
-}
-.seat_info{
-    display: flex;
-    height: 200px;
-    margin-top: 10px;
-    border: 1px solid rgb(83, 83, 83);
-    border-radius: 10px;
-}
-.seat_condition{
-    width: 160px;
-    padding: 20px;
-    line-height: 30px;
-}
-.seat_btn1{
-    width: 15px;
-    height: 15px;
-    border: none;
-    border-radius: 3px;
-    background-color: rgb(80, 50, 150);
-    outline: none;
-}
-.seat_condition .seat_btn2{
-    width: 15px;
-    height: 15px;
-    border: none;
-    border-radius: 3px;
-    background-color: rgb(204, 204, 204);
-    }
-.seat_condition .seat_btn3{
-    width: 15px;
-    height: 15px;
-    border: none;
-    border-radius: 3px;
-    background-color: rgb(204, 204, 204);
-}
-.seat_condition .seat_btn4{
-    width: 15px;
-    height: 15px;
-    border: none;
-    border-radius: 3px;
-    background-color: rgb(116,116,116);
-}
-.seat_condition .seat_btn5{
-    width: 15px;
-    height: 15px;
-    border: none;
-    border-radius: 3px;
-    background-color: rgb(50,134,25);
-}
-.seat_select{
-    width: 100px;
-    padding: 15px;
-    margin: 0 auto;
-    text-align: center;
-    border-left: 1px solid rgb(83, 83, 83);
-}
-.seat_array{
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-}
-.seat_array .selectTableCSS{
-    width: 40px; 
-    padding: 0;
-    height: 30px; 
-    border: 1px solid rgb(83, 83, 83);
-    text-align: center;
-}
-.select_result{
-    margin-top: 10px;
-    line-height: 30px;
-    position: relative;
-}
-.select_list{
-    font-size: 12px;
-    color: rgb(196,196,196);
-}
-.price{
-    position: absolute;
-    top: 30px;
-    }
-.price.final{
-    display: inline-block;
-    width: 10px;
-}
-.price .total_price{
-    display: inline-block;
-    width: 160px;
-    text-align: right;
-}
-.btn{
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    border: none;
-    position: absolute;
-    gap: 0;
-    bottom: 87px;
-    right: 10px;
-    z-index: 8;
-}
-.before_btn{
-    width: 155px;
-    border-bottom-left-radius: 10px;
-    border: none;
-    background-color: rgb(83,86,91);
-    padding: 8px;
-    color: #fff;
-    font-size: 18px;
-    cursor: pointer;
-}
-.after_btn{
-    width: 155px;
-    border-bottom-right-radius: 10px;
-    border: none;
-    background-color: rgb(224,224,224);
-    padding: 8px;
-    color: rgb(170,170,170);
-    font-size: 18px;
-    cursor: pointer;
-}
-.after_btn:hover{
-    background-color: rgb(50,158,177);
-    color: #fff;
-}
 
-footer{
-    background-color: rgb(248,248,248);
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-footer img{
-    width: 1100px;
-
-}
         /* 모달창-------------------------------------------- */
         .container .modal{
             /* border: 1px solid green; */
@@ -588,3 +340,119 @@ footer img{
             display: none;
         }
 
+main{
+    border: 1px solid blue;
+    width: 1100px;
+    margin: 0 auto;
+}
+/* 좌석테이블 ------------------------------------------- */
+.container .table_container{
+    width: 770px;
+    text-align: center;
+    border: 1px solid red;
+}
+
+.seat_table{
+    /* border: 1px solid blue; */
+    border-collapse: collapse;
+    display: inline-block;
+    margin: 0 auto;
+
+}
+
+.abc_row{
+    width: 25px;
+    background-color: #ececec;
+    color: rgb(63, 63, 63);
+    font-weight: 600;
+}
+
+.seat_row{
+    width: 25px;
+    background-color: #6f6f6f;
+    color: white;
+    font-weight: 300;
+}
+
+/* right */
+.container .right{
+    border: 1px solid red;
+    width: 310px;
+    height: 556px;
+    background-color: #333;
+    color: #c7c7c7;
+    margin-left: 30px;
+    padding: 10px 20px;
+    border-radius: 15px;
+}
+
+.container .right .movie_title #age{
+    background-color: rgb(255, 123, 0);
+    color: white;
+    padding: 2px;
+    margin-right: 10px;
+    text-align: center;
+}
+.container .right .movie_title #title{
+    font-size: 20px;
+    color: white;
+}
+.container .right .movie_title .blur{
+    margin-left: 37px;
+    font-size: 15px;
+}
+.container .right .movie_info{
+    border: 1px solid rgb(78, 78, 78);
+    border-left: none;
+    border-right: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    margin: 10px 0;
+    font-size: 15px;
+}
+.container .right .movie_info ul li{
+    /* margin: 0;
+    padding: 0; */
+}
+.container .right .movie_info ul li .time{
+    display: inline-block;
+    padding-top: 20px;
+    color: white;
+    font-size: 12px;
+}
+.container .right .movie_info .movie_img img{
+    height: 107px;
+    padding-top: 2px;
+}
+.container .right .seat_info{
+    display: flex;
+    border: 1px solid orange;
+    height: 250px;
+    justify-content: space-between;
+    border: 1px solid rgb(78, 78, 78);
+    border-radius: 5px;
+}
+.container .right .seat_info .seat_select{
+    /* height: 116px; */
+    width: 150px;
+    border: 1px solid orange;
+    text-align: center;
+    padding: 10px 0;
+}
+.container .right .seat_info .seat_select .blur{
+    font-size: 15px;
+}
+.container .right .seat_info .seat_select .seat_array table{
+    width: 100px;
+    height:200px;
+    /* border-collapse: collapse; */
+    margin: 0 auto;
+    border: rgb(168, 168, 168);
+    border-spacing:10px ;
+    padding-top: 15px;
+}
+.container .right .seat_info .seat_select .seat_array table td{
+    /* margin: 5px; */
+    border: 1px solid lightgray;
+}
