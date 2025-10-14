@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DropDown 메뉴</title>
+    <style>
+      ul li{
+        list-style: none;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <label><input type="checkbox" id="checkAll" /> 전체 선택</label>
+      <ul>
+        <li>
+          <label><input type="checkbox" class="item-check"  /> 항목 A</label>
+        </li>
+        <li>
+          <label><input type="checkbox" class="item-check" /> 항목 B</label>
+        </li>
+        <li>
+          <label><input type="checkbox" class="item-check" /> 항목 C</label>
+        </li>
+      </ul>
+    <script>
+      let checkAll=document.getElementById('checkAll');
+      let item_check=document.querySelectorAll('.item-check');
+      // change checkAll이 변경되는 사건이 일어나면...
+      checkAll.addEventListener('change',()=>{
+        for(let i=0;i<item_check.length;i++){
+          // input의 첫번째 = checked 지정
+          // <input type="checkbox" class="item-check" checked/> 와 같음
+          item_check[i].checked  = checkAll.checked;
+          // .checked -> 함수임
+        }
+      })
+      
+    </script>
+  </body>
+</html>
