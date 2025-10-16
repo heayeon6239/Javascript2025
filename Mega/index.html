@@ -37,62 +37,86 @@
                     <!-- header02 왼쪽 (리스트?,검색) -->
                     <div class="header02_left">
                         <!-- list 아이콘 -->
-                        <a href="#" id="list_icon"><img src="img/icon-sitemap.png" class="icon_sitemap" alt="icon-sitemap"></a>
+                        <a href="#" id="list_icon"><img src="img/ico-sitemap-white.png" class="icon_sitemap" alt="icon-sitemap"></a>
                         <!-- 돋보기 아이콘 -->
-                        <a href="#" id="search"><img src="img/icon-search.png" class="icon-search" alt="icon-search"></a>
+                        <a href="#" id="search"><img src="img/ico-search-white (1).png" class="icon-search" alt="icon-search"></a>
                     </div>
                     <!-- header02 미들 (메뉴바) -->
-                    <div class="header02_middle">
-                        <ul class="menu">
-                            <li>
-                                <a href="#"><p class="menubar" id="menubar01">영화</p></a>
-                                <a href="#"><p class="menubar" id="menubar02">예매</p></a>
-                                <a href="#"><p class="menubar" id="menubar03">극장</p></a>
-                                <img src="img/logo.png">
-                                <a href="#"><p class="menubar" id="menubar04">이벤트</p></a>
-                                <a href="#"><p class="menubar" id="menubar05">스토어</p></a>
-                                <a href="#"><p class="menubar" id="menubar06">혜택</p></a>
-                            </li>
-                        </ul>
-                        
+                    <div class="middle_container">
+                        <div class="header02_middle">
+                            <ul class="menu">
+                                <li class="menubar">
+                                    <a href="#"><p id="menubar01">영화</p></a>
+                                    <ul class="menu_dropbox" id="menu_dropbox0">
+                                        <li>
+                                            <span >전체영화</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menubar">
+                                    <a href="#"><p id="menubar02">예매</p></a>
+                                    <ul class="menu_dropbox"id="menu_dropbox1">
+                                        <li>
+                                            <span >빠른예매</span>
+                                            <span >상영시간표</span>
+                                            <span >더 부티크 프라이빗 예매</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menubar">
+                                    <a href="#"><p id="menubar03">극장</p></a>
+                                    <ul class="menu_dropbox" id="menu_dropbox2">
+                                        <li>
+                                            <span >전체극장</span>
+                                            <span >특별관</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <img id="mainLogo" src="img/logo-white_new2.png">
+                                </li>
+                                <li class="menubar">
+                                    <a href="#"><p id="menubar04">이벤트</p></a>
+                                    <ul class="menu_dropbox" id="menu_dropbox3">
+                                        <li>
+                                            <span >진행중 이벤트</span>
+                                            <span >지난 이벤트</span>
+                                            <span >당첨자 발표</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menubar">
+                                    <a href="#"><p id="menubar05">스토어</p></a>
+                                    <ul class="menu_dropbox" id="menu_dropbox4">
+                                        <li>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menubar">
+                                    <a href="#"><p id="menubar06">혜택</p></a>
+                                    <ul class="menu_dropbox" id="menu_dropbox5">
+                                        <li>
+                                            <span >메가박스 멤버쉽</span>
+                                            <span >제휴/할인</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="background_drop"></div>
                     </div>
                     <!-- header02 오른쪽 (일정,마이페이지) -->
                     <div class="header02_right">
                         <!-- 일정 아이콘 -->
-                        <i class="fa-solid fa-calendar-days"></i>
+                        <a href="#" id="schedule_icon"><img src="img/ico-schedule-white.png" class="icon_schedule" alt="스케쥴 아이콘"></a>
                         <!-- 마이페이지 아이콘 -->
-                        <i class="fa-regular fa-user"></i>
+                        <a href="#" id="mypage_icon"><img src="img/ico-mymega-white.png" class="icon_mypage" alt="마이페이지 아이콘"></a>
                     </div>
                     
                 </div>
             </div>
             
             <!-- (메뉴바 마우스오버하면 보이는 파트) -->
-            <ul class="header02_menu">
-                <li class="menu_hidden" id="hidden01">
-                    <span >전체영화</span>
-                </li>
-                <li class="menu_hidden" id="hidden02">
-                    <span >빠른예매</span>
-                    <span >상영시간표</span>
-                    <span >더 부티크 프라이빗 예매</span>
-                </li>
-                <li class="menu_hidden" id="hidden03">
-                    <span >전체극장</span>
-                    <span >특별관</span>
-                </li>
-                <li class="menu_hidden" id="hidden04">
-                    <span >진행중 이벤트</span>
-                    <span >지난 이벤트</span>
-                    <span >당첨자 발표</span>
-                </li>
-                <li class="menu_hidden" id="hidden05">
-                </li>
-                <li class="menu_hidden" id="hidden06">
-                    <span >메가박스 멤버쉽</span>
-                    <span >제휴/할인</span>
-                </li>
-            </ul>  
             <div class="header02_searchClick">
                 <div class="searchTitle">
                     <a href="#" class="bookRank">예매율순</a>
@@ -174,10 +198,7 @@
                 <div class="category">
                     <h2>SITEMAP</h2>
                     <ul class="sitemap">
-                        <li>
-                            <strong class="title">영화</strong>
-                            <p class="content">전체영화</p>
-                        </li>
+                        
                         <li>
                             <strong class="title">예매</strong>
                             <p class="content">빠른예매</p>
@@ -253,16 +274,7 @@
                         
                     </ul>
                 </div>
-                <div class="header03_all">
-                    <ul class="header03_left">
-                        <li>
-                            <!-- 홈 아이콘 -->
-                            <i class="fa-solid fa-house"></i>
-                            <a href="#">예매</a>
-                            <a href="#">빠른예매</a>
-                        </li>
-                    </ul>
-                </div>
+                
             </div>   
         </header>
 
@@ -285,7 +297,9 @@
                 </div>
                 <!-- movie_modal 창 -->
                 <div class="movie_modal">
-                    <p class="close_btn">X</p>
+                    <div class="close_btnn">
+                        <p class="close_btn">X</p>
+                    </div>
                     <div class="slider">
                         <img id="photo" src="img/movie1.jpg" alt="슬라이드 이미지"/>
                     </div>
@@ -444,16 +458,22 @@
                             <img src="img/ico-search-white.png" class="searching_icon_white">
                         </li>
                         <li class="searching01">
-                            <img src="img/ico-schedule.png" class="schedule_icon_white">
-                            <span class="section01_under_text">상영시간표</span>
+                            <a href="#">
+                                <img src="img/ico-schedule.png" class="schedule_icon_white">
+                                <span class="section01_under_text">상영시간표</span>
+                            </a>
                         </li>
                         <li class="searching01" >
-                            <img src="img/ico-boxoffice.png" class="boxoffice_icon_white">
-                            <span class="section01_under_text">박스오피스</span>
+                            <a href="#">
+                                <img src="img/ico-boxoffice.png" class="boxoffice_icon_white">
+                                <span class="section01_under_text">박스오피스</span>
+                            </a>
                         </li>
                         <li class="searching01">
-                            <img src="img/ico-quick-reserve.png" class="reserve_icon_white">
-                            <span class="section01_under_text">빠른예매</span>
+                            <a href="#">
+                                <img src="img/ico-quick-reserve.png" class="reserve_icon_white">
+                                <span class="section01_under_text">빠른예매</span>
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -461,65 +481,244 @@
             </div>
 
         </section01>
+
+        <!-- section 02 -------------------------------------------------------->
         <section02>
             <div class="section02">
-                <p class="section02_title">혜택</p>
-                <div class="section2_up">
-                    <img class="slide_img_left" src="img/slide1.jpg" alt="메가박스 오리지널 티켓 텍스트">
-                    <img class="slide_img_right" src="img/slideRight1.jpg" alt="메가박스 오리지널 티켓 이미지">
+                <div class="section02_1">
+                    <p class="section02_title">혜택</p>
+                    <!-- 배너 이미지 상단 좌,우 -->
+                    <div class="section2_up">
+                        <img class="slide_img_left" src="img/slide1.jpg" alt="메가박스 오리지널 티켓 텍스트">
+                        <img class="slide_img_right" src="img/slideRight1.jpg" alt="메가박스 오리지널 티켓 이미지">
+                    </div>
+                    <!-- 배너 페이지 파트 -->
+                    <div class="section02_slide">
+                        <!-- 페이지가 넘어가는게 보이는 이미지 -->
+                        <div class="section02_slide_btn">
+                            <span class="slide_btn02"></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <!-- 이전, 이후, 정지 버튼 -->
+                        <div class="before_btn">
+                            <img src="img/before_btn.png" alt="이전">
+                        </div>
+                        <div class="after_btn">
+                            <img src="img/after_btn.png" alt="이후">
+                        </div>
+                        <div class="stop_btn">
+                            <img src="img/stop_btn.png" alt="정지">
+                        </div>
+                        <!-- 해당 배너 번호 -->
+                        <div class="pageNum">
+                            <span class="now_pageNum"></span>
+                            <span>/</span>
+                            <span class="all_pageNum"></span>
+                        </div>
+                    </div>
+                    <!-- 배너 이미지 하단 좌,우 -->
+                    <div class="section2_down">
+                        <img class="img_left" src="img/section2_1_1.jpg" alt="광고사진1">
+                        <img class="img_right" src="img/section2_2_1.jpg" alt="광고사진2">
+                    </div>
+                    <!-- 하단 메뉴바 -->
+                    <ul class="section02_menu">
+                        <li>
+                             <a href="#" alt="클릭 이미지">
+                                <img src="img/ico-vip.png" alt="vip">
+                                <p class="section02_menu_text">VIP LOUNGE</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" alt="클릭 이미지">
+                                <img src="img/ico-membership.png" alt="membership">
+                                <p class="section02_menu_text">멤버십</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" alt="클릭 이미지">
+                                <img src="img/ico-card.png" alt="card">
+                                <p class="section02_menu_text">할인카드안내</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" alt="클릭 이미지">
+                                <img src="img/ico-event.png" alt="event">
+                                <p class="section02_menu_text">이벤트</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" alt="클릭 이미지">
+                                <img src="img/ico-store.png" alt="store">
+                                <p class="section02_menu_text">스토어</p>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-                <div class="section2_down">
-                    <img class="img_left" src="img/section2_1.jpg" alt="광고사진1">
-                    <img class="img_right" src="img/section2_2.jpg" alt="광고사진2">
-                </div>
-                <ul class="section02_menu">
-                    <li>
-                        <img src="img/ico-vip.png" alt="vip">
-                        <p class="vip_lounge">VIP LOUNGE</p>
-                    </li>
-                    <li>
-                        <img src="img/ico-membership.png" alt="membership">
-                        <p class="membership">멤버십</p>
-                    </li>
-                    <li>
-                        <img src="img/ico-card.png" alt="card">
-                        <p class="card">할인카드안내</p>
-                    </li>
-                    <li>
-                        <img src="img/ico-event.png" alt="event">
-                        <p class="event">이벤트</p>
-                    </li>
-                    <li>
-                        <img src="img/ico-store.png" alt="store">
-                        <p class="store">스토어</p>
-                    </li>
-                </ul>
+                <div class="background_box"></div>
             </div>
         </section02>
+        
+        <!-- section 03 ---------------------------------------------------- -->
+        <section03>
+            <div class="section03">
+                <div class="section03_1">
+                    <h3 class="section03_title">큐레이션</h3>
+                    <div class="section03_curation">
+                        <!-- left -->
+                        <div class="section03_left">
+                            <img class="left_poster" src="img/curation1.png" alt="큐레이션 책갈피">
+                            <img class="section03_poster" src="img/section03_img1.jpg" alt="큐레이션 영화포스터">
+                            <button type="button" class="detail_btn"><span class="detail01">상세정보</span></button>
+                            <button type="button" class="buy_btn02"><span class="buy">예매</span></button>
+                        </div>
+                        <!-- right -->
+                        <div class="section03_right">
+                            <div class="section03_right_text">
+                                <!-- <p class="right_text01">#필름소사이어티</p> -->
+                                <p class="right_text02">마작</p>
+                                <p class="right_text03">
+                                    급격한 경제 성장을 이루며 전 세계의 돈이 모이는 1990년대 타이베이,</br></br>
+                                    네 청년 홍어, 소부처, 홍콩 그리고 룬룬은 모든 것을 함께 나눈다는 약속을 하며
+                                    청년 갱단을 조직해 한 집에서 살아간다.</br></br>
+
+                                    남자친구와 재회하기 위해 무작정 타이베이를 찾았지만 갈 곳이 없어진 프랑스인 마르트.
+                                    갱단의 리더 홍어는 마르트를 이용하기 위해 접근하고,</br>
+                                    룬룬은 그녀에게 설레는 감정을 느끼기 시작한다.
+                                </p>
+                            </div>
+                            <!-- 포스터 4개 나열 -->
+                            <div class="posterPart">
+                                <div class="right_poster">
+                                    <div class="RP">
+                                        <img class="right_curation" src="img/curation2.png" alt="큐레이션 책갈피2">
+                                        <img class="right_poster01" src="img/section03_img2.jpg" alt="영화 포스터">
+                                        <p class="movie_name">프랑켄슈타인 : 더 뮤지컬 라이브</p>
+                                    </div>
+                                    <div class="RP">
+                                        <img class="right_curation" src="img/curation2.png" alt="큐레이션 책갈피2">
+                                        <img class="right_poster01" src="img/section03_img3.jpg" alt="영화 포스터">
+                                        <p class="movie_name">만남의집</p>
+                                    </div>
+                                    <div class="RP">
+                                        <img class="right_curation" src="img/curation2.png" alt="큐레이션 책갈피2">
+                                        <img class="right_poster01" src="img/section03_img4.jpg" alt="영화 포스터">
+                                        <p class="movie_name">그저 사고였을 뿐</p>
+                                    </div>
+                                    <div class="RP">
+                                        <img class="right_curation" src="img/curation2.png" alt="큐레이션 책갈피2">
+                                        <img class="right_poster01" src="img/section03_img5.jpg" alt="영화 포스터">
+                                        <p class="movie_name">연의 편지</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section03>
+        <!-- section 04 ------------------------------------------------- -->
+        <section04>
+            <div class="section04">
+                <p class="section04_title">메가박스 안내</p>
+            </div>
+        </section04>
     </div>
     
 
     <!-- script -->
     <script>
+        // 영화 포스터 배열
+        let section03_poster=document.querySelector('.section03_poster');
+        let right_text02=document.querySelector('.right_text02');
+        let right_text03=document.querySelector('.right_text03');
+        let right_poster01=document.querySelectorAll('.right_poster01'); // 배열
+        let left_poster=document.querySelector('.left_poster'); 
+
+        let m_title=['프랑켄슈타인','만남의 집','그저 사고였을 뿐','연의 편지'];
+        let m_story=[
+                    "“신을 믿어 지독하게. 하지만 그건 축복이 아니야, 저주를 통해서지.”"+"</br>"+
+                    "나폴레옹 전쟁의 참혹한 전장에서 시작된 과학자 빅터 프랑켄슈타인의 실험은 피조물을 탄생시키지만, 예기치 못한 피조물의 실종으로 파국을 맞이한다."
+                    +
+                    "3년 뒤, 빅터 앞에 괴물이 되어 돌아온 피조물은 “교만한 창조주여, 내가 겪은 불행을 돌려주리라”는 저주와 함께 그의 운명을 뒤흔든다."
+                    +
+                    "10년간 무대를 압도해온 한국 창작뮤지컬의 신화, 뮤지컬 〈프랑켄슈타인〉이 스크린에서 다시 살아난다.",
+
+                    `15년 차 교도관 태저(송지효)는 근무 중 담당 수용자 미영(옥지영)의 모친 사망 소식을 전해 듣는다.
+                    어느 겨울밤, 장례식장 빈소에서 예기치 못한 만남을 하게 된 태저와 미영의 딸 준영(도영서).
+                    짧은 만남은 두 사람의 삶에 따스한 균열을 일으키고, 결국 세 인물의 연결고리를 만들어낸다.
+                    “네가 하는 모든 선택들이 모여서 네가 돼”
+                    서로의 삶을 비추는 ‘햇빛 같은 만남’`,
+
+                    `어느 날, 나를 지옥으로 이끌던 삐걱 소리가 다시 들렸다.
+                    분명 그놈이다. 하지만 만약에 아니라면?
+                    “그저 사고였을 뿐? 누군가는 그걸 평생 기억해”`,
+
+                    `여름 방학이 지나고 새로운 학교로 전학 오게 된 ‘소리’는
+                    자신의 책상 서랍에서 학교에 대한 소개와
+                    다음 편지를 찾을 수 있는 힌트가 담긴 익명의 편지 한 통을 발견한다.
+
+                    “내 편지를 더 읽고 싶다면 두 번째 편지를 찾아줘!”
+
+                    이어지는 편지를 따라서 보물찾기하듯 학교 곳곳을 누비던 ‘소리’는
+                    어쩐지 동급생 ‘동순’과 자꾸 마주치고,
+                    ‘소리’와 ‘동순’은 함께 편지를 찾는 친구가 된다.
+
+                    하나, 둘… 편지를 모을수록 특별한 인연이 이어지자,
+                    ‘소리’는 편지를 보낸 사람에 대한 궁금증이 점차 커져가게 되는데…
+
+                    “마지막 편지까지 찾아서, 너에게 고맙다고 말하고 싶어”`,
+                    ]   
+
+        // let posterNum=0;
+        // function changePoster(posterNum){
+        //     section03_poster.src=`img/section03_img${posterNum+1}.jpg`
+        // }
+        
+        for(let i=0;i<right_poster01.length;i++){
+            right_poster01[i].addEventListener('mouseover',()=>{
+                section03_poster.src=`img/section03_img${i+2}.jpg`;
+                right_text02.textContent=m_title[i];
+                // innerHTML을 써야만 위 </br>태그가 먹힘!!!!!!!!!!!
+                right_text03.innerHTML=m_story[i];
+                left_poster.style.display='none';
+            })
+            right_poster01[i].addEventListener('mouseleave',()=>{
+                section03_poster.src=`img/section03_img1.jpg`;
+                left_poster.style.display='block';
+            })
+        }
+        
+
         // 메뉴바 (마우스 오버 -> 보임, 아웃 -> 숨김)
         let menubar=document.querySelectorAll('.menubar'); // 배열
+        let menu_dropbox=document.querySelectorAll('.menu_dropbox'); // 배열
         let menu_hidden=document.querySelectorAll('.menu_hidden');
         let header02_menu=document.querySelector('.header02_menu');
+        let background_drop=document.querySelector('.background_drop');
 
         for(let i=0;i<menubar.length;i++){
             // 마우스오버
             menubar[i].addEventListener('mouseover',()=>{
-                menu_hidden[i].style.display='block';
-                header02_menu.style.display='block';
+                if(i === 4){
+                    background_drop.style.display='none';
+                }else{
+                    menu_dropbox[i].style.display='block';
+                    background_drop.style.display='block';
+                }
+                
             })
             // 마우스아웃
-            menubar[i].addEventListener('mouseout',()=>{
-                menu_hidden[i].style.display='none';
-                header02_menu.style.display='none';
+            menubar[i].addEventListener('mouseleave',()=>{
+                menu_dropbox[i].style.display='none';
+                background_drop.style.display='none';
             })
             
         }
-
         // 리스트 클릭하면 카테고리 보이고 다시 숨기기 (toggle)
         const list_icon=document.getElementById('list_icon');
         const category=document.querySelector('.category');
@@ -632,12 +831,27 @@
 
         // movie_modal----------------------
         // DOM 접근
+        let close_btn=document.querySelector('.close_btn');
+        let movie_modal=document.querySelector('.movie_modal');
+        let check_box=document.querySelector('.check_box');
         let photo=document.getElementById('photo');
         let timer;
         let current_index=0;
         let slide_btn=document.querySelectorAll('.btns span');
         let toggle_btn=document.getElementById('toggle_btn');
         let a=true;
+
+        // close 버튼
+        close_btn.addEventListener('click',()=>{
+            movie_modal.style.display='none';
+        })
+        // checkBox 
+        check_box.addEventListener('click',()=>{
+            close_btn.addEventListener('click',()=>{
+                movie_modal.style.display='none';
+            })
+        })
+
 
         // 이미지 변경 함수
         function slideShow(current_index){
@@ -718,16 +932,58 @@
 
         // 슬라이드
 
+        // 상단부 2개 슬라이드
         let slide_img_left=document.querySelector('.slide_img_left');
         let slide_img_right=document.querySelector('.slide_img_right');
         let timer01;
         let current01=0;
+        let btn02=document.querySelectorAll('.section02_slide_btn span');
+        // 해당 배너 번호 보여주기
+        let now_pageNum=document.querySelector('.now_pageNum');
+        let all_pageNum=document.querySelector('.all_pageNum');
+        
+        // 하단부 2개 슬라이드
+        let img_left=document.querySelector('.img_left');
+        let img_right=document.querySelector('.img_right');
+        let timer02;
+        let current02=0;
+        
+        
+        // 하단부 2개 슬라이드 함수 --------------------------------------------------------
+        function slideShow02(index){
+            img_left.src=`img/section2_1_${index+1}.jpg`;
+            img_right.src=`img/section2_2_${index+1}.jpg`;
+        }
+        function startSlide02(){
+            timer02=setInterval(()=>{
+                if(current02 === 3){
+                    current02=0;
+                }else{
+                    current02++;
+                }
+                slideShow02(current02);
+            },6000)
+        }
 
+        startSlide02();
+
+        // 상단부 2개 슬라이드 함수 ------------------------------------------------------
         function slideShow01(index){
             slide_img_left.src=`img/slide${index+1}.jpg`
             slide_img_right.src=`img/slideRight${index+1}.jpg`
+            
+
+            for(let i=0;i<btn02.length;i++){
+                btn02[i].classList.remove('slide_btn02');
+            }
+            btn02[index].classList.add('slide_btn02');
+            
+            now_pageNum.textContent=index+1;
+            all_pageNum.textContent=btn02.length;
+
+            
         }
-        
+        // 재생 함수
         function startSlide01(){
             timer01=setInterval(()=>{
                 if(current01 ===5 ){
@@ -735,10 +991,58 @@
                 }else{
                     current01++;
                 }
+                // 밑에서 서서히 올라오는
+                slide_img_left.classList.toggle('active');
                 slideShow01(current01);
             },3000);
         }
+        // 정지 함수
+        function stopSlide01(){
+            clearInterval(timer01);
+        }
+        // 이전 함수
+        function beforeSlide(){
+            current01--;
+            slideShow01(current01);
+        }
+        // 이후 함수
+        function afterSlide(){
+            current01++;
+            slideShow01(current01);
+        }
+        // 출력
         startSlide01();
+        // beforeSlide()
+
+        let before_btn=document.querySelector('.before_btn');
+        let after_btn=document.querySelector('.after_btn');
+        let stop_btn=document.querySelector('.stop_btn');
+        let stop_img=stop_btn.querySelector('img');
+        let b=true;
+        // 재생, 정지 버튼 
+        stop_btn.addEventListener('click',()=>{
+            if(b){
+                stopSlide01();
+                stop_img.src="img/play-btn.png";
+            }else{
+                startSlide01();
+                stop_img.src="img/stop_btn.png";
+            }
+            b =! b;
+        })
+        //  이전 버튼
+        before_btn.addEventListener('click',()=>{
+            beforeSlide();
+        })
+        // 이후 버튼
+        after_btn.addEventListener('click',()=>{
+            afterSlide();
+        })
+
+        
+
+
+       
 
     </script>
 </body>

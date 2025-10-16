@@ -1,13 +1,11 @@
 @charset "utf-8";
 
 *{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
     font-family: sans-serif;
+    box-sizing: border-box;
 }
 body{
-    /* background-color: #383838; */
+    color: #333;
 }
 /* 공통 */
 ul{
@@ -33,8 +31,13 @@ a{
 button{
     cursor: pointer;
 }
-/* header 파트-------------------------------- */
 
+/* header 파트-------------------------------- */
+.container .menubar_width{
+    padding-top: 20px;
+    /* height: 91px; */
+    background-color: #242424;
+}
 /* header01 */
 .container .header01{
     /* border: 1px solid red; */
@@ -43,37 +46,35 @@ button{
     display: flex;
     justify-content: space-between;
     font-size: 13px;
+ 
 }
-
-
-
+.container .header01 .header_left li a{
+    color: #fff;
+}
+.container .header01 .header_right li a{
+    color: #fff;
+}
 /* header02 */
 
 .container .header02 {
     width: 1100px;
     margin: 0 auto;
-    /* border: 1px solid blue; */
     display: flex;
     justify-content: space-between;
     /* 세로 중앙 정렬 */
     align-items: center;
-    padding-top: 20px;
-
 }
 /* header02 아이콘 */
 .container .header02 .header02_left{
-    font-size: 25px;
+    height: 55px;
+    /* padding-top: 17px; */
     display: flex;
     align-items: center;
-    /* border: 1px solid rgb(56, 49, 255); */
-    height: 55px;
-    padding-top: 17px;
 }
 .container .header02 .header02_left img{
     margin-right: 15px;
     width: 22px;
     height: 22px;
-    color: #6f6f6f;
     cursor: pointer;
     /* display: block; */
 }
@@ -89,94 +90,80 @@ button{
 .container .header02 .header02_left i{
     margin-right: 15px;
     font-size: 22px;
-    color: #414141;
+    color: #fff;
     cursor: pointer;
 }
 .container .header02 .header02_right{
-    font-size: 25px;
     height: 55px;
-    padding-top: 17px;
+    /* padding-top: 17px; */
+    display: flex;
+    align-items: center;
 }
 .container .header02 .header02_right i{
     margin-left: 15px;
-    color: #6f6f6f;
+    color: #fff;
     cursor: pointer;
 }
-.container .header02 .header02_middle .menu li{
-    display: flex;
-    /* border: 1px solid red; */
-    gap: 40px;
-    font-size: 20px;
-    font-weight: 600;
-    padding-bottom: 20px;
-    
-}
-.container .header02 .header02_middle .menu li img{
-    /* padding-bottom: 20px; */
-}
-.container .header02 .header02_middle .menu li a p{
-    margin-bottom: 0;
-    /* padding-bottom: 20px; */
-}
-.container .header02 .header02_middle .menu li a{
-    border-bottom: 4px solid transparent;
-    /* padding-bottom: 20px; */
-    /* padding: 20px 0; */
-    position: relative;
-}
-/* .container .header02 .header02_middle .menu li a:hover {
-    transition: border-color 0.5s ease;
-} */
-.container .header02 .header02_middle .menu li a:hover::after{
-    content:'';
-    margin-top: 12px;
-    border-bottom: 4px solid rgb(60, 152, 175);
-    width: 40px;
-    height: 5px;
-    /* background-color: aqua; */
-    position: absolute;
-    left :50%;
-    transform: translateX(-50%);
-    /* top: 100px; */
-}
-.container .header02 .header02_middle .menu li img{
-    width: 140px;
-    margin-top: 6px;
-    margin: 0 30px;
-}
-
-/* 메뉴바 마우스오버/아웃 */
-
-.container .header02_menu{
-    display: none;
+.container .header02 .middle_container{
     width: 100%;
-    height: 42px;
-    background-color: rgb(60, 152, 175);
-    position: absolute;
-    top: 107px;
+}
+.container .header02 .middle_container .header02_middle .menu{
+    display: flex;
+    justify-content: center;
+}
+.container .header02 .middle_container .header02_middle .menu .menubar a{
+    color: #fff;
+}
+.container .header02 .middle_container .header02_middle .menu .menubar{
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+}
+.container .header02 .middle_container .header02_middle #mainLogo{
+    cursor: pointer;
+    padding: 0 30px;
+}
+.container .header02 .middle_container .header02_middle .menu span{
+    padding-left: 25px;
     color: white;
-    line-height: 42px;
-    z-index: 20;
-    
 }
-.container .header02_menu .menu_hidden span{
-    padding: 0 10px;
-    font-size: 15px;
+.container .header02 .middle_container .header02_middle .menu span:hover{
+    text-decoration: underline;
+    cursor: pointer;
 }
-.container .header02_menu #hidden01{
-    margin-left: 335px;
+.container .header02 .middle_container .header02_middle .menu #menu_dropbox0{
+    position: absolute;
+    z-index: 30;
+    display: none;
 }
-.container .header02_menu #hidden02{
-    margin-left: 330px;
+.container .header02 .middle_container .header02_middle .menu #menu_dropbox1{
+    position: absolute;
+    z-index: 31;
+    display: none;
 }
-.container .header02_menu #hidden03{
-    margin-left: 470px;
+.container .header02 .middle_container .header02_middle .menu #menu_dropbox2{
+    position: absolute;
+    z-index: 32;
+    display: none;
 }
-.container .header02_menu #hidden04{
-    margin-left: 720px;
+.container .header02 .middle_container .header02_middle .menu #menu_dropbox3{
+    position: absolute;
+    z-index: 33;
+    display: none;
 }
-.container .header02_menu #hidden06{
-    margin-left: 960px;
+.container .header02 .middle_container .header02_middle .menu #menu_dropbox5{
+    position: absolute;
+    z-index: 34;
+    display: none;
+}
+.container .header02 .middle_container .background_drop{
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    z-index: 29;
+    left: 0;
+    background-color: rgba(48, 19, 105, 0.6);
+    display: none;
 }
 /* 돋보기 클릭시 나오는 화면 */
 .container .header02_searchClick{
@@ -301,10 +288,6 @@ button{
 
 .container .header03{
     width: 100%;
-    height: 42px;
-    background-color: rgb(247, 247, 247);
-    border-top: 1px solid darkgray;
-    margin-bottom: 40px;
     position: relative;
 }
 /* 카테고리 */
@@ -403,7 +386,7 @@ button{
     color:white;
     position: absolute;
     top: 100px;
-    right: -380px;
+    right: 20px;
     font-size: 14px;
     z-index: 50;
 }
@@ -427,7 +410,7 @@ button{
     width: 140px;
     height: 200px;
     position: absolute;
-    right: -400px;
+    right: 0px;
     top: 62px;
     border-radius: 5px;
     display: none;
@@ -439,7 +422,7 @@ button{
 .section01 .side_slide .my_movie .part01{
     font-size: 13px;
     text-align: center;
-    margin-top: 20px;
+    /* margin-bottom: 60px; */
     cursor: pointer;
 }
 .section01 .side_slide .my_movie .part01 .part01_text{
@@ -469,8 +452,12 @@ button{
     left: 50%;
     transform: translate(-50%,-50%);
     border-radius: 20px;
-    padding: 10px 20px;
-    display: none;
+    padding: 30px 20px;
+    /* display: none; */
+}
+.movie_modal .close_btn{
+    cursor: pointer;
+    margin: 0;
 }
 .movie_modal .slider img{
     width: 320px;
@@ -482,12 +469,16 @@ button{
     display: flex;
     justify-content: space-between;
     margin-top: 5px;
+    
 }
 .movie_modal .under_part .btns{
     display: flex;
     gap: 5px;
     /* 세로 정렬 */
     align-items: center;
+}
+.movie_modal .under_part .btns .control{
+    margin-bottom: 6px;
 }
 .movie_modal .under_part .btns span{
     display: inline-block;
@@ -499,6 +490,22 @@ button{
 }
 .movie_modal .under_part .btns span.active{
     background-color: #2d125f;
+}
+/* X 버튼 */
+
+.movie_modal .close_btnn{
+    position: relative;
+}
+.movie_modal .close_btnn .close_btn{
+    display: inline;
+    background-color: #aeadad;
+    color: #fff;
+    border-radius: 50%;
+    line-height: 30px;
+    padding: 5px 14px;
+    position: absolute;
+    top: -50px;
+    right: -30px;
 }
 
 /* 박스오피스 영화 랭킹 화면 */
@@ -522,7 +529,7 @@ button{
     border-bottom: 1px solid rgb(144, 144, 144);
     position: absolute;
     width: 100px;
-    top: 80px;
+    top: 100px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -547,7 +554,7 @@ button{
     font-weight: 350;
     /* padding: 10px; */
     position: absolute;
-    top: 5px;
+    top: -20px;
     left: 15px;
     text-shadow: 2px 2px 3px rgba(0, 0, 0, 10); 
     z-index: 10;
@@ -603,6 +610,7 @@ button{
     color: white;
     font-size: 14px;
     line-height: 25px;
+    
 }
 .posterPart .boxoffice_movie .detail .score_part{
     width: 100%;
@@ -674,7 +682,11 @@ button{
 .section01_under li > img{
     padding-right: 13px;
 }
-.section01_under li > span{
+.section01_under .searching01 a{
+    display: flex;
+    gap: 20px;
+}
+.section01_under .searching01 a span{
     color: white;
     font-size: 15px;
 }
@@ -709,6 +721,13 @@ button{
     align-items: center;
     
 }
+.section01_under .searching .movie_search:focus{
+    outline: none;
+    caret-color:#fff;
+}
+.section01_under .searching .movie_search:focus::placeholder{
+    color: rgb(123, 123, 123);
+}
 .section01_under .searching .searching_icon_white{
     position: absolute;
     left: 210px;
@@ -721,28 +740,261 @@ button{
 
 /* section02 --------------------------------------------- */
 .section02{
+    position: relative;
+}
+.section02_1{
     width: 1100px;
     height: 841px;
     margin: 0 auto;
-    border: 1px solid red;
+    /* border: 1px solid red; */
+    position: relative;
+    z-index: 10;
+    
 }
-.section02 .section02_title{
+.section02_1 .section02_title{
     font-size: 23px;
     color: #2d125f;
     font-weight: 400;
 }
-.section02 .section2_up{
+
+/* 배너 이미지 상단 좌, 우 */
+.section02_1 .section2_up{
     display: flex;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     width: 900px;
     height: 325px;
+    padding-bottom: 20px;
 }
-.section02 .section2_up img{
+.section02_1 .section2_up img{
     /* width: 100%; */
     flex-shrink: 0;
 }
-/* .section02 .section2_up .slide_left{
+.section02 .section2_up .slide_img_left{
+    transition: 0.3s;
+}
+.section02 .section2_up .slide_img_left.active{
+    transform: translateY(10px);
+}
+
+/* 배너 페이지 파트 */
+.section02_1 .section02_slide{
+    width: 290px;
+    display: flex;
+    /* border: 1px solid blue; */
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+.section02_1 .section02_slide .section02_slide_btn{
+    display: flex;
+    align-items: center;
+}
+.section02_1 .section02_slide .section02_slide_btn span{
+    display: block;
+    width: 31px;
+    height: 2px;
+    background-color: lightgray;
+}
+.section02_1 .section02_slide .section02_slide_btn .slide_btn02{
+    background-color: #2d125f;
+}
+
+/* 배너 이미지 하단 좌,우 */
+.section02_1 .section2_down{
+    height: 204px;
+    display: flex;
+    gap: 10px;
+}
+.section02_1 .section2_down img{
+    height: 204px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.4);
+}
+
+/* section02 - menu */
+.section02_1 .section02_menu{
+    width: 100%;
+    /* height: 332px; */
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    margin-top: 90px;
+    padding: 0 70px;
+}
+.section02_1 .section02_menu li{
+    height: 40px;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+}
+.section02_1 .section02_menu li a{
+    color: white;
+    font-size: 14px;
+    text-align: center;
+}
+
+.section02_1 .section02_menu li .section02_menu_text{
+    margin-bottom: 0;
+    display: block;
+}
+
+
+/* 배경 (보라색 박스) */
+.section02 .background_box{
+    width: 100%;
+    height: 332px;
+    background-color: #4d2694;
+    position: absolute;
+    bottom: 0px;
+    z-index: 0;
+}
+
+/* section 03 ---------------------------------------------- */
+
+.section03{
+    width: 100%;
+    height: 840px;
+    background-color: #1a173d;
+}
+.section03 .section03_1{
+    width: 1100px;
+    height: 100%;
+    /* border: 1px solid orange; */
+    margin: 0 auto;
+}
+.section03 .section03_1 .section03_title{
+    margin: 0;
+    color: white;
+    padding: 50px 0;
+    font-size: 30px;
+    font-weight: 400;
+}
+.section03 .section03_1 .section03_curation{
+    /* border: 1px solid orange; */
+    height: 588px;
+    display: flex;
+}
+.section03 .section03_1 .section03_curation .section03_left{
+    width: 1100px;
+    height: 588px;
+    position: relative;
+}
+/* 큐레이션 책갈피 */
+.section03 .section03_1 .section03_curation .section03_left .left_poster{
+    width: 123px;
+    height: 135px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    z-index: 10;
+}
+/* 큐레이션 대표 영화 포스터 */
+.section03 .section03_1 .section03_curation .section03_left .section03_poster{
     width: 300px;
-    height: 230px;
-    
+    height: 430px;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    border-radius: 5px;
+}
+
+/* 상세정보 버튼 */
+/* 버튼 공용 */
+.section03 .section03_1 .section03_curation .section03_left button{
+    position: absolute;
+    bottom: 87px;
+    width: 142px;
+    height: 50px;
+    color: white;
+    font-size: 20px;
+    border-radius: 5px;
+}
+.section03 .section03_1 .section03_curation .section03_left .detail_btn{
+    position: absolute;
+    left: 20px;
+    border: 1px solid white;
+    background-color: transparent;
+}
+.section03 .section03_1 .section03_curation .section03_left .buy_btn02{
+    position: absolute;
+    left: 178px;
+    background-color: rgb(41, 138, 162);
+    border: none;
+}
+.section03 .section03_1 .section03_curation .section03_left .detail_btn span{
+    color: white;
+    font-size: 20px;
+}
+
+/* right 파트 */
+
+.section03 .section03_1 .section03_curation .section03_right{
+    position: relative;
+}
+/* 글 */
+.section03 .section03_1 .section03_curation .section03_right .section03_right_text{
+    width: 730px;
+    height: 192px;
+    color: white;
+}
+/* .section03 .section03_1 .section03_curation .section03_right .section03_right_text .right_text01{
+    font-size: 20px;
+    margin: 0;
 } */
+.section03 .section03_1 .section03_curation .section03_right .section03_right_text .right_text02{
+    font-size: 35px;
+    margin: 0;
+    position: relative;
+}
+.section03 .section03_1 .section03_curation .section03_right .section03_right_text .right_text02::before{
+    content: '';
+    width: 730px;
+    height: 1px;
+    background-color: #505050;
+    position: absolute;
+    bottom: -32px;
+}
+.section03 .section03_1 .section03_curation .section03_right .section03_right_text .right_text03{
+    margin-top: 53px;
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    /* white-space: nowrap; */
+    display: -webkit-box;
+    -webkit-line-clamp: 4;         /* 보여줄 줄 수 */
+    -webkit-box-orient: vertical;
+    line-height: 30px;
+}
+/* 영화 포스터 */
+.section03 .section03_1 .section03_curation .posterPart{
+    width: 730px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.section03 .section03_1 .section03_curation .posterPart .right_poster{
+    display: flex;
+    /* border: 1px solid orange; */
+    width: 730px;
+}
+.section03 .section03_1 .section03_curation .posterPart .right_poster .RP{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    /* border: 1px solid orange; */
+}
+.section03 .section03_1 .section03_curation .posterPart .right_poster .RP .right_curation{
+    position: absolute;
+    left: 10px;
+    top: -10px;
+}
+.section03 .section03_1 .section03_curation .posterPart .right_poster .RP .right_poster01{
+    border-radius: 5px;
+}
+.section03 .section03_1 .section03_curation .posterPart .right_poster .RP .movie_name{
+    width: 165px;
+    color: white;
+    text-align: center;
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: 5px 0;
+}
